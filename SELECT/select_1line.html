@@ -18,7 +18,7 @@
     <title>셀렉트 제목</title>
     
     <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2099/common.css" />
-    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2115/select_1line.css">
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2114/select_1line.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://dcode-prod-bucket.s3.ap-northeast-2.amazonaws.com/content/itsdcode_scripts_3.min.js"></script>
@@ -39,6 +39,23 @@
 
         main .main_visual .text p {
           text-align: center;
+        }
+
+        main .main_visual .text p:nth-child(1) {
+        animation: opacity 1.2s forwards ease-in;
+        opacity: 0;
+        }
+
+        main .main_visual .text p:nth-child(2) {
+          animation: open_up 1s 0.6s forwards;
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        main .main_visual .text p:nth-child(3) {
+          animation: open_up 1s 0.8s forwards;
+          opacity: 0;
+          transform: translateY(20px);
         }
 
         /* main .edit {
@@ -78,6 +95,18 @@
             padding: 60px 0px 155px;
             background-position: center 80%;
           }
+        }
+
+        main .main_visual .text p:nth-child(1) {
+        animation: open_left 0.8s forwards;
+        opacity: 0;
+        transfrom: translateX(30px);
+        }
+
+        main .main_visual .text p:nth-child(2) {
+          animation: open_left 0.8s 0.4s forwards;
+          opacity: 0;
+          transfrom: translateX(30px);
         }
     </style>
   </head>

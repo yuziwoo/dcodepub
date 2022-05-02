@@ -25,6 +25,11 @@ main .main_visual .text p:nth-child(2) {
   line-height: 1.6;
 }
 
+main .main_visual .text p:nth-child(3) {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
 main .about {
   width: 100%;
   padding: 72px 0px;
@@ -130,6 +135,10 @@ main .about .text p:last-child {
     font-size: 16px;
   }
 
+  main .main_visual .text p:nth-child(3) {
+    font-size: 16px;
+  }
+
   main .about {
     padding: 42px 0px;
   }
@@ -226,5 +235,79 @@ main .about .text p:last-child {
   .notice2 .wrapper {
     padding-top: 15px;
     font-size: 14px;
+  }
+}
+
+/* animation */
+
+
+
+@keyframes open_left {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes open_right {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes open_up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes open_down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes open_funky {
+  from {
+    opacity: 0;
+    transform: translateY(30px) rotate(30deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
