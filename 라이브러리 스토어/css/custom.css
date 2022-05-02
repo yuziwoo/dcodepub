@@ -1,0 +1,36 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Noto Serif', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Marcellus', serif;
+*/
+
+:root {
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body, header, footer, main, section, aside, button, input, div, video, ul, li, h1, h2, h3, h4, span, p, figure, img, a {
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  color: #222222;
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+}

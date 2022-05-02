@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Swiper</title>
+
+    <!-- 호환성 및 뷰포트 -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, height=device-height, user-scalable=no' />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <!-- CDN  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> <!-- 또는 css파일 직접 불러와도됨  -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> 
+
+    <style>
+      
+    </style>
+
+  </head>
+  <body>
+    <main>
+      <p>
+        안녕하세요<br>
+        안녕하세요2<br>
+        3<br style="display:none">
+        4<br class="for_pc">
+        5<br>
+      </p>
+
+      <h1 class="for_pc">It's PC</h1>
+      <h1 class="for_mob">It's Mobile</h1>
+    </main>
+
+    <script>
+     window.addEventListener("DOMContentLoaded", () => {
+       if (document.body.offsetWidth < 1360) {
+         document.body.classList.add("ver_mob");
+       } else {
+         document.body.classList.add("ver_pc");
+       }
+     })
+    </script>
+
+    <style>
+      .ver_pc .for_mob {
+        display: none;
+      }
+
+      .ver_mob .for_pc {
+        display: none;
+      }
+    </style>
+  </body>
+
+</html>

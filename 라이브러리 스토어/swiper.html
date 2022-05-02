@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Swiper</title>
+
+    <!-- 호환성 및 뷰포트 -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, height=device-height, user-scalable=no' />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <!-- CDN  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> <!-- 또는 css파일 직접 불러와도됨  -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> 
+
+    <style>
+      .swiper1 {
+        width: 600px;
+        height: 300px;
+      }
+
+      .swiper-wrapper {
+        height: auto;
+      }
+    </style>
+
+  </head>
+  <body>
+    <main>
+      <div class="swiper swiper1">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </main>
+
+    <script>
+      const swiper = new Swiper('.swiper1', {
+        // 자주 쓰는 param
+        direction: 'horizontal', // 가로 : horizontal (기본값), 세로 : vertical
+        // loop: true, // loop 사용할꺼면 scrollbar 쓰지말자 오류남
+
+        // allowSlideNext: 'true', // false 설정 시 다음 슬라이드로 안 넘어감
+        // allowSlidePrev: 'true',
+        // allowTouchMove: 'true', // false 설정 시 좌우 스크롤링 버튼으로만 조작 가능
+        // autoHeight: 'false', // true 설정시 slider wrapper가 리스트의 height값으로 자동 변환됩니다.
+
+        // 한번에 여러개 보여지는 Swiper ( +반응형 )
+        slidesPerView: 1, // 몇개 보여줄지, auto도 가능
+        spaceBetween: 10, // 간격을 몇 px로 할지
+        /*
+
+        // 반응형 >= 320px, >= 640px
+        breakpoints: {
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          640: {
+            slidesPerView: 4,
+            spaceBetween: 40
+          }
+        }
+        */
+
+        // centeredSlides: true, // (기본값 = false) 리스트를 센터에 고정하기
+        // centeredSlidesBounds: true, // (기본값 = false) centeredSlides가 true일 경우 생기는 좌우측의 여백을 제거합니다.
+
+        // effect: 'fade',
+        /*
+        이펙트 기본값 = slide
+        fade = 페이드 인아웃
+        cube = 정육면체 형식의 큐브
+        coverflow = 양 옆에 슬라이드 리스트들이 기울어져 있음 centeredSlides랑 같이 사용하면 좋을듯
+        flip = 뒤집기
+        creative = 전환 효과 없음
+        cards = 카드 여러잡 겹친효과
+        */
+       
+        // followFinger: false, // true 설정 시 손가락 위치에 맞춰서 지속 이동이 아니라 이동이 끝나야 전환됨
+        // grabCursor: true, // true 설정 시 마우스 hover, click 하면 마우스 커서 바뀜
+        // initialSlide: 0, // 메인으로 나올 슬라이드의 인덱스 번호를 지정
+        // speed: 300, // ms단위
+
+
+      
+
+        // 페이징
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets', // fraction, progressbar, custom 등이 있지만 안씀
+          // bulletActiveClass: 'activeClassName', // Active 된 불렛의 클래스 이름 지정
+          clickable: true, // true 설정 시 페이저 클릭 가능
+          dynamicBullets: true, // bullet 몇개만 보이게 하기
+          dynamicMainBullets: 2, // dynamicBullets 적용 시 기본 크기로 보이는 bullet의 갯수 지정
+          // hideOnClick: true, // swiper 클릭 시 페이저가 사라졌다 나타났다 함
+        },
+
+        // 좌우 버튼
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        // 스크롤바
+        scrollbar: {
+          el: '.swiper-scrollbar',
+          // dragClass: 'dragbarName', // 드래그바의 클래스이름 지정
+          // dragSize: 50, // number | 'auto' 드래그바의 사이즈 px
+          hide: true, // 행동이 없으면 사라짐 (최초엔 첫 행동 후 사라짐)
+        },
+
+        // 자동 재생
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false, // 이걸 false 안하면 유적 swiper 조작 후 자동재생이 멈춤
+          // pauseOnMouseEnter: true, // true 설정시 마우스가 swiper 들어간 후 자동재생이 멈춤
+          stopOnLastSlide: false, // 기본값 = false, true로 설정하면 마지막에 자동재생 멈춤
+        },
+        
+        // Grid 있는데 안쓸듯
+
+      })
+      
+      // 메소드
+      // swiper.slideNext(); // 다음 슬라이드로 넘김
+      
+      /* Navigation
+      메소드
+      swiper.navigation.destory(); // 네비게이션 제거
+      swiper.navigation.init(); // initialize 네비게이션
+      swiper.naviagtion.update(enabled); // enavled/disabled 로 업데이트
+
+      이벤트
+      navigationHide // navigation이 hide되면 이벤트 발생
+      navigationShow // navigation이 show되면 이벤트 발생
+      */
+
+      /* Pagination
+      메소드
+      swiper.pagination.bullets[0]; // 특정 스와이퍼 불렛 호출
+      swiper.pagination.destory(); // 제거
+      swiper.pagination.init(); // initialize
+      swiper.pagination.update(enabled); // enabled | disabled | active
+      */
+
+      /* Autoplay
+      swiper.autoplay.running; // 자동재생이 되고있는지 true or false 반환
+      swiper.autoplay.start();
+      swiper.autoplay.stop();
+
+      이벤트
+      autoplay // 자동재생으로 슬라이드가 바뀌면 이벤트 발생
+      autoplayPause // 마우스 엔터 등으로 자동재생이 멈추면 이벤트 발생
+      autoplayResume // 자동재생 다시 시작하면 이벤트 발생
+      autoplayStart
+      autoplayStop
+      */
+
+      /* 그외에
+      swiper.addSlide(1, '<div class="swiper-slide">slide 5</div>'); // Slide 더하기
+      swiper.appendSlide('<div class="swiper-slide">slide 5</div>'); // Slide 더하기
+      swiper.prependSlide('<div class="swiper-slide">slide 5</div>'); // Slide 더하기
+      swiper.removeAllSlides(); // 슬라이드 제거
+      swiper.removeSlide(Index); // 특정 슬라이드 제거 ( 쉼표를 통해 여러개도 제거 가능)
+      */
+
+      // const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      //       const main = $(".main-wrap");
+      //       if (isMobile) {
+      //           main.removeClass("pc");
+      //           /* visual */
+      //           var swiper = new Swiper(".product-swiper", {
+      //               loop: true,
+      //               allowTouchMove: true,
+      //               speed: 400,
+      //               slidesPerView: 2.8,
+      //               spaceBetween: 15,
+      //               autoplay: {
+      //                   delay: 1600,
+      //                   disableOnInteraction: true,
+      //               },
+      //               scrollbar: {
+      //                   el: '.swiper-scrollbar',
+      //                   draggable: true,
+      //               },
+      //               breakpoints: {
+      //                   768: {
+      //                       slidesPerView: 3.8
+      //                   },
+      //                   1024: {
+      //                       slidesPerView: 4.8
+      //                   }
+      //               }
+      //           });
+      //       } else {
+      //           main.addClass("pc");
+      //           /* visual */
+      //           var swiper = new Swiper(".product-swiper", {
+      //               loop: false,
+      //               allowTouchMove: false,
+      //               slidesPerView: 5,
+      //               spaceBetween: 15
+      //           });
+      //       }
+    </script>
+
+    <style>
+      
+    </style>
+  </body>
+
+</html>

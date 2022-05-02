@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68979793-14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "UA-68979793-14");
+    </script>
+    
+    <title>타이틀 제목</title>
+    
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/1906/common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css" />
+    <style>
+        /* 콘텐츠 CSS */
+        body {
+            overflow: hidden;
+        }
+        .main-wrap {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .inner {
+            width: 100%;
+            padding: 0 27px;
+            box-sizing: border-box;
+        }
+        .square {
+            font-family: 'NanumSquare', sans-serif;
+        }
+
+        /* visual */
+        .visual-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #f3e9ce;
+        }
+        .visual-wrap .txt-box {
+            width: 100%;
+            padding: 52px 0 50px;
+        }
+        .visual-wrap .tit {
+            font-size: 34px;
+        }
+        .visual-wrap .brand {
+            margin: 8px 0 35px;
+            font-size: 26px;
+        }
+        .visual-wrap .txt,
+        .visual-wrap .date {
+            font-size: 14px;
+            line-height: 1.4em;
+        }
+        .visual-wrap .date {
+            margin: 5px 0 30px;
+        }
+        .visual-wrap .sale {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 30px;
+            padding: 0 12px;
+            font-size: 16px;
+            border: 1px solid #000;
+            border-radius: 16px;
+        }
+        .visual-wrap img {
+            width: 50%;
+        }
+
+        /* countdown */
+        .countdown-wrap {
+            padding: 45px 0;
+        }
+        .countdown-wrap .tit {
+            margin-bottom: 32px;
+            font-size: 22px;
+        }
+        .countdown {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .countdown span {
+            display: block;
+        }
+        .countdown .time {
+            width: 116px;
+            font-size: 36px;
+        }
+        .countdown .time.before:before {
+            display: block;
+            position: absolute;
+            top: -2px;
+            left: -5px;
+            content: ':';
+        }
+        .countdown .txt {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        /* notice */
+        .notice-wrap {
+            padding: 27px 0;
+            background-color: #f2f2f2;
+        }
+        .notice-wrap li {
+            padding-left: 8px;
+            font-size: 12px;
+            line-height: 1.5em;
+        }
+        .notice-wrap li + li {
+            margin-top: 4px;
+        }
+
+        @media screen and (max-width: 374px) {
+            /* countdown */
+            .countdown .time {
+                width: 106px;
+            }
+        }
+
+        @media screen and (max-width: 359px) {
+            .ms-block {
+                display: block;
+            }
+            
+            /* visual */
+            .visual-wrap .txt-box {
+                padding: 44px 0 42px;
+            }
+            .visual-wrap .tit {
+                font-size: 28px;
+            }
+            .visual-wrap .brand {
+                margin: 6px 0 26px;
+                font-size: 20px;
+            }
+            .visual-wrap .txt,
+            .visual-wrap .date {
+                font-size: 12px;
+            }
+            .visual-wrap .date {
+                margin: 2px 0 25px;
+            }
+            .visual-wrap .sale {
+                height: 22px;
+                padding: 0 10px;
+                font-size: 12px;
+                border-radius: 12px;
+            }
+
+            /* countdown */
+            .countdown-wrap {
+                padding: 38px 0;
+            }
+            .countdown-wrap .tit {
+                margin-bottom: 28px;
+                font-size: 20px;
+            }
+            .countdown .time {
+                width: 96px;
+                font-size: 32px;
+            }
+            .countdown .time.before:before {
+                left: -4px;
+            }
+            .countdown .txt {
+                margin-top: 16px;
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width: 319px) {
+            /* countdown */
+            .countdown-wrap .tit {
+                font-size: 18px;
+            }
+            .countdown .time {
+                width: 84px;
+                font-size: 30px;
+            }
+            .countdown .txt {
+                font-size: 10px;
+            }
+            
+            /* notice */
+            .notice-wrap li {
+                font-size: 10px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            /* visual */
+            .visual-wrap {
+                align-items: center;
+                justify-content: space-between;
+            }
+            .visual-wrap .txt-box {
+                width: 39.375%;
+                padding: 0;
+                order: 2;
+            }
+            .visual-wrap img {
+                width: 30.3125%;
+            }
+            .visual-wrap .visual-img01 {
+                order: 1;
+            }
+            .visual-wrap .visual-img02 {
+                order: 3;
+            }
+
+            /* notice */
+            .notice-wrap {
+                padding: 43px 0 44px;
+            }
+            .notice-wrap li {
+                padding-left: 11px;
+                font-size: 16px;
+            }
+            .notice-wrap li + li {
+                margin-top: 5px;
+            }
+        }
+
+        @media screen and (min-width: 1280px) {
+            .inner {
+                width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0;
+            }
+
+            /* visual */
+            .visual-wrap .tit {
+                font-size: 3.4375vw;
+            }
+            .visual-wrap .brand {
+                margin: 1.0417vw 0 3.85417vw;
+                font-size: 2.60417vw;
+            }
+            .visual-wrap .txt,
+            .visual-wrap .date {
+                font-size: 1.3021vw;
+            }
+            .visual-wrap .date {
+                margin: 0.78125vw 0 8.22917vw
+            }
+            .visual-wrap .sale {
+                height: 2.60417vw;
+                padding: 0 1.25vw;
+                font-size: 1.35417vw;
+                border-radius: 1.35417vw;
+            }
+
+            /* countdown */
+            .countdown-wrap {
+                padding: 4.947917vw 0 5.0521vw;
+            }
+            .countdown-wrap .tit {
+                margin-bottom: 3.125vw;
+                font-size: 1.875vw;
+            }
+            .countdown .time {
+                width: 11.7708vw;
+                font-size: 3.6458vw;
+            }
+            .countdown .time.before:before {
+                top: -0.3125vw;
+                left: -0.46875vw;
+            }
+            .countdown .txt {
+                margin-top: 2.0833vw;
+                font-size: 1.25vw;
+            }
+
+            /* notice */
+            .notice-wrap {
+                text-align: center;
+            }
+            .notice-wrap .bar-list li:before {
+                display: inline-block;
+                position: relative;
+                margin-right: 6px;
+            }
+            .notice-wrap li {
+                padding-left: 0;
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (min-width: 1720px) {
+            /* visual */
+            .visual-wrap .tit {
+                font-size: 66px;
+            }
+            .visual-wrap .brand {
+                margin: 20px 0 74px;
+                font-size: 50px;
+            }
+            .visual-wrap .txt,
+            .visual-wrap .date {
+                font-size: 25px;
+            }
+            .visual-wrap .date {
+                margin: 15px 0 158px;
+            }
+            .visual-wrap .sale {
+                height: 50px;
+                padding: 0 24px;
+                font-size: 26px;
+                border-radius: 26px;
+            }
+
+            /* countdown */
+            .countdown-wrap {
+                padding: 95px 0 97px;
+            }
+            .countdown-wrap .tit {
+                margin-bottom: 60px;
+                font-size: 36px;
+            }
+            .countdown .time {
+                width: 226px;
+                font-size: 70px;
+            }
+            .countdown .time.before:before {
+                top: -6px;
+                left: -9px;
+            }
+            .countdown .txt {
+                margin-top: 40px;
+                font-size: 24px;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <!---- 콘텐츠 시작 ------>
+    <div class="main-wrap">
+        <!-- visual -->
+        <div class="visual-wrap txt-center rel">
+            <div class="txt-box">
+                <p class="tit montserrat fw700">BRAND DAY</p>
+                <p class="brand montserrat fw500">#CHLOE</p>
+                <p class="txt square fw700">단 하루! 특별한 가격으로 만나는 <i class="ms-block"></i><i class="t-block"></i>끌로에 브랜드 데이</p>
+                <p class="date square fw700">22.4.21 (13:00) - 22.4.22 (13:00)</p>
+                <p class="sale montserrat fw700">UP TO 54%</p>
+            </div>
+            <img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2083/visual_img01.jpg" alt="CHLOÉ LOOKBOOK" class="visual-img01" />
+            <img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2083/visual_img02.jpg" alt="CHLOÉ LOOKBOOK" class="visual-img02" />
+        </div>
+        <div class="countdown-wrap montserrat fw700 txt-center">
+            <div class="inner">
+                <p class="tit">COUNTDOWN</p>
+                <div id="countdown" class="countdown">
+                    <p class="hour">
+                        <span class="time rel">&nbsp;</span><span class="txt">HOURS</span>
+                    </p>
+                    <p class="min">
+                        <span class="time before rel">&nbsp;</span><span class="txt">MINUTES</span>
+                    </p>
+                    <p class="sec">
+                        <span class="time before rel">&nbsp;</span><span class="txt">SECONDS</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- notice -->
+        <div class="notice-wrap square">
+            <div class="inner">
+                <ul class="bar-list">
+                    <li class="fw600">브랜드 데이는 페이지에 안내된 기간에만 진행됩니다.</li>
+                    <li>본 상품들은 국내에서 배송되며, 주문 대량 발생 시 주문 후 출고까지 3-5일 소요될 수 있습니다.</li>
+                    <li>주문 대량 발생 시 동시 주문이 발생하여 품절 취소가 발생할 수 있습니다.</li>
+                    <li>주문 대량 발생 시 택배사의 사정에 따라 배송지연이 발생할 수 있습니다.</li>
+                    <li>교환/취소를 원하시는 경우, 상품 수령 후 7일 이내 접수하셔야 합니다. (단, 상품 택 제거, 상품 개봉 등으로 인한 상품 가치 훼손 시에는 교환/취소가 불가합니다)</li>
+                    <li>상품 불량/하자 사유 외에 고객 사유로 인한 교환/취소의 경우, 반품 배송비는 고객 부담입니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--- 콘텐츠 끝!!!! ----->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://dcode-prod-bucket.s3.ap-northeast-2.amazonaws.com/content/itsdcode_scripts_3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2083/script.min.js"></script>
+    <script>
+        $(window).resize(function(){
+            _dcode_resize();
+        });
+    </script>
+  </body>
+</html>

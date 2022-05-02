@@ -1,0 +1,12 @@
+nav {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  z-index: 30;
+}
+
+nav .btnbtn {
+  width: 30px;
+  height: 30px;
+  background: pink;
+}
