@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68979793-14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "UA-68979793-14");
+    </script>
+    <title>룰렛</title>
+    
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2099/common.css" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://dcode-prod-bucket.s3.ap-northeast-2.amazonaws.com/content/itsdcode_scripts_3.min.js"></script>
+    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2099/common.js"></script>
+
+    <style>
+        /* 콘텐츠 CSS */
+        body {
+          overflow: hidden;
+        }
+
+        .select_wrap {
+          display: flex;
+        }
+
+        .select label {
+          padding: 0px 30px;
+        }
+
+        .select label div {
+          width: 100px;
+        }
+
+        .select_wrap form input[type="radio"] {
+          display: none;
+          visibility: none;
+        }
+
+        .selected {
+          box-shadow: 5px 5px 5px lightblue;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Content Area -->
+    <main>
+      <section class="roulette">
+          <div class="wrapper">
+              <img class="circle" src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/roulette1.png" alt="룰렛 이미지">
+              <img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/roulette2.png" alt="룰렛 이미지">
+              <button class="roulette_btn"><img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/roulette3.png" alt="룰렛 이미지"></button>
+            </div>
+      </section>
+
+      <section class="select">
+        <div class="select_wrap">
+            <label for="select_radio1">
+              <div class="select_box"><img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/present.jpg" alt="prize img"></div>
+              <input type="radio" name="select_prize" class="select_radio" id="select_radio1">
+            </label>
+            <label for="select_radio2">
+              <div class="select_box"><img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/present.jpg" alt="prize img"></div>
+              <input type="radio" name="select_prize" class="select_radio" id="select_radio2">
+            </label>
+            <label for="select_radio3">
+              <div class="select_box"><img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/present.jpg" alt="prize img"></div>
+              <input type="radio" name="select_prize" class="select_radio" id="select_radio3">
+            </label>
+            <label for="select_radio4">
+              <div class="select_box"><img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/present.jpg" alt="prize img"></div>
+              <input type="radio" name="select_prize" class="select_radio" id="select_radio4">
+            </label>
+            <label for="select_radio5">
+              <div class="select_box"><img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/present.jpg" alt="prize img"></div>
+              <input type="radio" name="select_prize" class="select_radio" id="select_radio5">
+            </label>
+            <label for="select_radio6">
+              <div class="select_box"><img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/present.jpg" alt="prize img"></div>
+              <input type="radio" name="select_prize" class="select_radio" id="select_radio6">
+            </label>
+
+            <button class="select_button">응모하기</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- CSS / JS -->
+    <link rel="stylesheet" href="https://dcode-develop-account-dev-bucket.s3.ap-northeast-2.amazonaws.com/2124/roulette.css">
+    <script src="https://dcode-develop-account-dev-bucket.s3.ap-northeast-2.amazonaws.com/2124/roulette.js"></script>
+  </body>
+</html>

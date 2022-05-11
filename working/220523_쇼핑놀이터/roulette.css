@@ -1,0 +1,99 @@
+.roulette {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.roulette .wrapper {
+    max-width: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roulette .wrapper img:nth-child(2) {
+    position: absolute;
+    width: 10.4%;
+    top: -12%;
+}
+
+.roulette .wrapper button {
+    background: transparent;
+    position: absolute;
+    width: 25%;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.roulette .wrapper button:hover {
+    animation: start_hover 0.5s 1 forwards;
+}
+
+.roulette .wrapper .circle {
+    /* animation: coupon7 5s 1 forwards; */
+    transition: transform 3s cubic-bezier(.62,-0.01,.07,.99);
+    transform: rotate(0deg);
+}
+
+@keyframes start_hover {
+    from {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes coupon7 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(1185deg);
+    }
+}
+
+@keyframes coupon99 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(1125deg);
+    }
+}
+
+@keyframes coupon50 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(1065deg);
+    }
+}
+
+@keyframes coupon20 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(1005deg);
+    }
+}
+
+@keyframes coupon15 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(945deg);
+    }
+}
+
