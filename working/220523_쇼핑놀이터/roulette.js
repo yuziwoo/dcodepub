@@ -76,12 +76,14 @@ let select_value = 0;
 
 for(let i=0; i<select_box.length; i++) {
     select_box[i].addEventListener("click", () => {
-        select_box[0].classList.remove("selected");
-        select_box[1].classList.remove("selected");
-        select_box[2].classList.remove("selected");
-        select_box[3].classList.remove("selected");
-        select_box[4].classList.remove("selected");
-        select_box[5].classList.remove("selected");
+        try {
+            select_box[0].classList.remove("selected");
+            select_box[1].classList.remove("selected");
+            select_box[2].classList.remove("selected");
+            select_box[3].classList.remove("selected");
+            select_box[4].classList.remove("selected");
+            select_box[5].classList.remove("selected");
+        } catch () {_dcode_alert("오류입니다. 페이지를 새로고침해보세요.")}
 
         select_box[i].classList.add("selected");
     })
