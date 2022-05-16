@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68979793-14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "UA-68979793-14");
+    </script>
+
+    <title>스크롤 테스트</title>
+    
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2099/common.css" />
+    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2099/common.js"></script>
+    
+    <style>
+        /* Contents CSS */
+        body {
+            overflow: hidden;
+        }
+
+        div {
+          padding-bottom: 700px;
+        }
+        .testing {
+          height: 1000px;
+          background-color: cornflowerblue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .down_btn {
+          width: 40%;
+          height: 30px;
+          border-radius: 15px;
+        }
+        h1 {
+          font-size: 36px;
+          color: darkolivegreen;
+          text-align: center;
+        }
+        .delay_wrap {
+          display: flex;
+          justify-content: center;
+        }
+        .scroll_effect_new {
+          width: 100%;
+          max-width: 785px;
+          margin: auto;
+        }
+
+    </style>
+  </head>
+  <body>
+    <!-- Contents -->
+    <main>
+      <section class="scroll_wrap">
+        <div class="testing"><button class="down_btn">go bottom</button></div>
+        <div class="scroll_effect"><h1>HELLO</h1></div>
+        <div class="scroll_effect scroll_effect_up"><h1>HELLO</h1></div>
+        <div class="scroll_effect scroll_effect_down"><h1>HELLO</h1></div>
+        <div class="scroll_effect scroll_effect_left"><h1>HELLO</h1></div>
+        <div class="scroll_effect scroll_effect_right"><h1>HELLO</h1></div>
+        <div class="scroll_effect scroll_effect_new"><img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2144/main_visual2.jpg" alt=""></div>
+        <div class="delay_wrap">
+          <h1 class="scroll_effect scroll_effect_up">H</h1>
+          <h1 class="scroll_effect scroll_delay1 scroll_effect_up">E</h1>
+          <h1 class="scroll_effect scroll_delay2 scroll_effect_up">L</h1>
+          <h1 class="scroll_effect scroll_delay3 scroll_effect_up">L</h1>
+          <h1 class="scroll_effect scroll_delay4 scroll_effect_up">O</h1>
+        </div>
+      </section>
+    </main>
+
+    <!-- Script -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://dcode-prod-bucket.s3.ap-northeast-2.amazonaws.com/content/itsdcode_scripts_3.min.js"></script>
+
+    <!-- scroll effect -->
+    <link rel="stylesheet" href="https://dcode-develop-account-dev-bucket.s3.ap-northeast-2.amazonaws.com/2116/scroll_effect.css">
+
+    <script>
+let scroll_effect = document.getElementsByClassName("scroll_effect");
+
+let scroll_function = () => {
+    for (let i=0; i<scroll_effect.length; i++) {
+        if (scroll_effect[i].offsetTop < parent.innerHeight / 5 * 4 + parent.scrollY && !scroll_effect[i].classList.contains("scroll_effect_on")) {
+            scroll_effect[i].classList.add("scroll_effect_on");
+        }
+
+        
+    }
+}
+
+scroll_function();
+
+parent.addEventListener("resize", (e) => {
+  scroll_function();
+})
+
+parent.addEventListener("scroll", (e) => {
+    scroll_function();
+})
+
+// 위치이동 스크립트
+
+let down_btn = document.getElementsByClassName("down_btn")[0];
+let delay_wrap = document.getElementsByClassName("delay_wrap")[0];
+// let iframes = itsdcode_script_handleEvent('querySelectorAll', {query: '.nciframe'});
+
+down_btn.addEventListener("click", () => {
+  // parent.scrollTo(0, parent.document.getElementsByClassName("iframeWrap")[1].offsetTop);
+  parent.scrollTo(0, parent.document.getElementsByClassName("nciframe")[1].offsetTop);
+  // parent.scrollTo(0, iframes[1].offsetTop);
+
+  console.log(parent.document.getElementsByClassName("nciframe")[0].offsetTop);
+  console.log(parent.document.getElementsByClassName("nciframe")[1].offsetTop);
+  console.log(parent.document.getElementsByClassName("nciframe")[2].offsetTop);
+})
+    </script>
+
+  </body>
+</html>
