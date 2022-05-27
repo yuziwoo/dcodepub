@@ -1,46 +1,46 @@
 .scroll_effect {
-    transition: all 0.7s;
+    transition: all 0.7s ease-out;
     opacity: 0;
 }
 
 .scroll_delay1 {
-    transition: all 0.7s 0.2s;
+    transition: all 0.7s 0.2s ease-out;
 }
 
 .scroll_delay2 {
-    transition: all 0.7s 0.4s;
+    transition: all 0.7s 0.4s ease-out;
 }
 
 .scroll_delay3 {
-    transition: all 0.7s 0.6s;
+    transition: all 0.7s 0.6s ease-out;
 }
 
 .scroll_delay4 {
-    transition: all 0.7s 0.8s;
+    transition: all 0.7s 0.8s ease-out;
 }
 
 .scroll_delay5 {
-    transition: all 0.7s 1s;
+    transition: all 0.7s 1s ease-out;
 }
 
 .scroll_delay6 {
-    transition: all 0.7s 1.2s;
+    transition: all 0.7s 1.2s ease-out;
 }
 
 .scroll_delay7 {
-    transition: all 0.7s 1.4s;
+    transition: all 0.7s 1.4s ease-out;
 }
 
 .scroll_delay8 {
-    transition: all 0.7s 1.6s;
+    transition: all 0.7s 1.6s ease-out;
 }
 
 .scroll_delay9 {
-    transition: all 0.7s 1.8s;
+    transition: all 0.7s 1.8s ease-out;
 }
 
 .scroll_delay10 {
-    transition: all 0.7s 2s;
+    transition: all 0.7s 2s ease-out;
 }
 
 .scroll_effect_up {
@@ -74,7 +74,7 @@
     display: block;
     background-color: aquamarine;
     opacity: 1;
-    transition: all 0.7s
+    transition: all 0.7s  ease-out;
 }
 
 .scroll_effect_on {

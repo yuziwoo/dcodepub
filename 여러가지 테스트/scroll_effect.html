@@ -15,6 +15,11 @@
 
         gtag("config", "UA-68979793-14");
     </script>
+    <script>
+      if (parent) {
+          parent.document.getElementsByClassName("nciframe")[0].style.minHeight = `${parent.innerHeight}px`;
+      }
+    </script>
 
     <title>스크롤 테스트</title>
     
@@ -85,23 +90,23 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://dcode-prod-bucket.s3.ap-northeast-2.amazonaws.com/content/itsdcode_scripts_3.min.js"></script>
 
-    <!-- scroll effect -->
-    <link rel="stylesheet" href="https://dcode-develop-account-dev-bucket.s3.ap-northeast-2.amazonaws.com/2116/scroll_effect.css">
+    <!-- 쓰면 안되는 기존 scroll effect -->
+    <!-- <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2173/scroll_effect.css">
 
     <script>
 let scroll_effect = document.getElementsByClassName("scroll_effect");
 
 let scroll_function = () => {
     for (let i=0; i<scroll_effect.length; i++) {
-        if (scroll_effect[i].offsetTop < parent.innerHeight / 5 * 4 + parent.scrollY && !scroll_effect[i].classList.contains("scroll_effect_on")) {
+        if (parent.innerHeight / 10 * 9 + scroll_effect[i].getBoundingClientRect().top < parent.scrollY && !scroll_effect[i].classList.contains("scroll_effect_on")) {
             scroll_effect[i].classList.add("scroll_effect_on");
-        }
-
-        
+            } 
     }
 }
 
-scroll_function();
+window.addEventListener("DOMContentLoaded", () => {
+    scroll_function();
+})
 
 parent.addEventListener("resize", (e) => {
   scroll_function();
@@ -111,6 +116,9 @@ parent.addEventListener("scroll", (e) => {
     scroll_function();
 })
 
+
+
+
 // 위치이동 스크립트
 
 let down_btn = document.getElementsByClassName("down_btn")[0];
@@ -119,14 +127,56 @@ let delay_wrap = document.getElementsByClassName("delay_wrap")[0];
 
 down_btn.addEventListener("click", () => {
   // parent.scrollTo(0, parent.document.getElementsByClassName("iframeWrap")[1].offsetTop);
-  parent.scrollTo(0, parent.document.getElementsByClassName("nciframe")[1].offsetTop);
+  parent.scrollTo(0, parent.document.getElementsByClassName("nciframe")[1].offsetTop - 70);
   // parent.scrollTo(0, iframes[1].offsetTop);
-
-  console.log(parent.document.getElementsByClassName("nciframe")[0].offsetTop); // parent
-  console.log(parent.document.getElementsByClassName("nciframe")[1].offsetTop); // 최초 컨텐츠
-  console.log(parent.document.getElementsByClassName("nciframe")[2].offsetTop); // 두번째 컨텐츠
 })
-    </script>
+    </script> -->
 
   </body>
+
+
+
+  <!-- scroll effect -->
+  <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2173/scroll_effect.css">
+
+  <script>
+    // 클래스 생성
+    let scroll_effect = document.getElementsByClassName("scroll_effect");
+    for (let i=0; i < scroll_effect.length; i++) {
+      scroll_effect[i].classList.add("scroll_effect_off");
+    }
+
+    // 스크롤 함수 생성
+    let scroll_function = (e) => {
+      try {
+        for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
+          if (top) {
+            if (document.getElementsByClassName("scroll_effect_off")[i].getBoundingClientRect().top < top.innerHeight / 5 * 3  + top.scrollY && !document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
+              document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
+              document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
+             }
+          } else {
+            break;
+          }
+        }
+
+        if (!top) {
+          e.currentTarget.removeEventListener("scroll", scroll_function);
+        }
+      } catch (exception) {
+        if (!top) {
+          e.currentTarget.removeEventListener("scroll", scroll_function);
+        }
+      } finally {
+        if (!top) {
+          e.currentTarget.removeEventListener("scroll", scroll_function);
+        }
+      }
+    }
+
+    // 스크롤 이벤트 추가
+    top.addEventListener("scroll", scroll_function);
+    window.addEventListener("DOMContentLoaded", scroll_function);
+    window.addEventListener("resize", scroll_function);
+    </script>
 </html>

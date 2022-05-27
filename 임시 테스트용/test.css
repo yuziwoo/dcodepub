@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Nanum Square';
+    src: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2190/NanumSquareR.otf");
+}
+.font_nanumsquare {
+    font-family: 'Nanum Square';
+}
+
+.main_visual {
+    width: 100%;
+    display: flex;
+}
+
+.main_visual .left {
+    width: 50%;
+}
+
+.main_visual .left img {
+    width: 100%;
+    display: block;
+}
+
+.main_visual .right {
+    width: 50%;
+    position: relative;
+    background-image: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2190/img2.jpg");
+    background-position: center bottom;
+    background-size: auto 100%;
+}
+
+.main_visual .right .bg_img {
+    width: 100%;
+    display: block;
+}
+
+.main_visual .right .text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_visual .right .text img {
+    width: 80%;
+    max-width: 592px;
+    padding: 18.1% 0% 26.76%;
+}
+
+.main_visual .right .text p:nth-child(2) {
+    color: #403520;
+    font-size: 22px;
+    line-height: 38px;
+    font-weight: 600;
+    padding-bottom: 3%;
+}
+
+.main_visual .right .text p:nth-child(3) {
+    color: #403520;
+    font-size: 25px;
+    line-height: 48px;
+    font-weight: 600;
+    padding-bottom: 5%;
+}
+
+.main_visual .right .text .circle {
+    font-size: 45px;
+    line-height: 1;
+    font-weight: 700;
+    color: #403520;
+    padding: 20px 40px;
+    border-radius: 42.5px;
+    background: #ece5d7;
+}
+
+
+@media screen and (max-width:1024px) {
+    
+}
+
+.check {
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #817a68;
+    padding: 80px 0px;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: -0.02em;;
+}
+
+.br_mob {
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    .check {
+        padding: 50px 0px;
+        font-size: 12px;
+    }
+    .br_mob {
+        display: block;
+    }
+}
+
+
+@media screen and (max-width:345px) {
+    .check {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width:310px) {
+    .check {
+        font-size: 10px;
+    }
+}

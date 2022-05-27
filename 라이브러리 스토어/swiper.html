@@ -21,6 +21,23 @@
       .swiper-wrapper {
         height: auto;
       }
+
+      /* 폰트 적용 */
+      @font-face {
+        font-family: 'One Title';
+        src: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/ONE Mobile Title OTF.otf");
+      }
+      .font_one {
+        font-family: 'One Title';
+      }
+
+      @font-face {
+        font-family: 'Nanum Square';
+        src: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2190/NanumSquareR.otf");
+      }
+      .font_nanumsquare {
+        font-family: 'Nanum Square';
+      }
     </style>
 
   </head>
@@ -28,6 +45,7 @@
     <!-- button <a type="/news/detail/!$AMzEjM" class="btn_link"></a> -->
     <!-- coupon <a onclick="window.open('dcodenative://downloadCoupon?cid=4368')" id="4368" class="btn_coupon btn"></a>-->
     <!-- 오픈 알림 <a onclick="window.open('https://itsdcode.page.link/pushpush')" type="/events/push" class="btn_event btn_alarm btn"></a>-->
+    <!-- VIDEO src="https://player.vimeo.com/video/708054792?badge=0&background=1&autoplay=1&loop=1&autopause=0&muted=1" -->
     <main>
       <div class="swiper swiper1">
         <div class="swiper-wrapper">
@@ -45,6 +63,17 @@
         <div class="swiper-scrollbar"></div>
       </div>
     </main>
+
+    <!-- const swiper = new Swiper (".swiper", {
+      loop: true,
+      allowTouchMove: false,
+      speed: 400,
+      slidesPerView: 1,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: true,
+      }
+    }) -->
 
     <script>
       const swiper = new Swiper('.swiper1', {
@@ -223,3 +252,79 @@
   </body>
 
 </html>
+
+
+
+
+<!-- <script>
+  $(".slick").slick({
+    vertical : false,
+    arrows: false,
+    slidesToScroll: 1,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 30000,
+    infinite: true,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    centerMode: true,
+    touchMove: false,
+    draggable: false,
+    cssEase: 'linear',
+
+    responsive: [
+        {
+            breakpoint: 1919,
+            settings: {
+                slidesToShow: 0.8,
+            }
+          },
+        {
+          breakpoint: 1500,
+          settings: {
+              slidesToShow: 0.7,
+          }
+          },
+        {
+          breakpoint: 1325,
+          settings: {
+              slidesToShow: 0.6,
+          }
+        },
+        {
+          breakpoint: 1055,
+          settings: {
+              slidesToShow: 0.4,
+              speed: 34000,
+          }
+        },
+        {
+          breakpoint: 565,
+          settings: {
+              slidesToShow: 0.3,
+          }
+        },
+        {
+          breakpoint: 450,
+          settings: {
+              slidesToShow: 0.25
+          }
+        },
+        {
+          breakpoint: 401,
+          settings: {
+              slidesToShow: 0.23,
+              speed: 34000,
+          }
+        },
+        {
+          breakpoint: 360,
+          settings: {
+              slidesToShow: 0.15,
+              speed: 34000,
+          }
+        }
+    ]
+   });
+</script> -->
