@@ -1,0 +1,31 @@
+
+      .sec_coupon {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 60px;
+    }
+    .sec_coupon .img {
+        width: 100%;
+        max-width: 1000px;
+        position: relative;
+    }
+    .sec_coupon .img a {
+        position: absolute;
+        display: block;
+        width: 48%;
+        height: 34%;
+        left: 26.3%;
+        top: 17.1%;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+  <section class="sec_coupon">
+      <div class="img">
+          <img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2185/coupons.jpg" alt="coupon img">
+          <a onclick="window.open('dcodenative://downloadCoupon?cid=4378')" id="4378" class="btn_coupon btn"></a>
+      </div>
+  </section>
+  

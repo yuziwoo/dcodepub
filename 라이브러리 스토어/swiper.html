@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> <!-- 또는 css파일 직접 불러와도됨  -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> 
 
+    <!-- 기본 높이 정해두기 (버벅임방지) -->
+    <script>
+      if (parent) {
+          parent.document.getElementsByClassName("nciframe")[0].style.minHeight = `${parent.innerHeight}px`;
+      }
+    </script>
+
+    
+
     <style>
       .swiper1 {
         width: 600px;
@@ -64,7 +73,9 @@
       </div>
     </main>
 
-    <!-- const swiper = new Swiper (".swiper", {
+    <!-- 간단한 스와이퍼
+
+    const swiper = new Swiper (".swiper", {
       loop: true,
       allowTouchMove: false,
       speed: 400,
@@ -73,7 +84,9 @@
         delay: 1500,
         disableOnInteraction: true,
       }
-    }) -->
+    })
+
+  -->
 
     <script>
       const swiper = new Swiper('.swiper1', {
@@ -328,3 +341,53 @@
     ]
    });
 </script> -->
+
+
+
+<!-- 상품 상세페이지
+
+
+      .sec_coupon {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 60px;
+    }
+    .sec_coupon .img {
+        width: 100%;
+        max-width: 1000px;
+        position: relative;
+    }
+    .sec_coupon .img a {
+        position: absolute;
+        display: block;
+        width: 48%;
+        height: 34%;
+        left: 26.3%;
+        top: 17.1%;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+  <section class="sec_coupon">
+      <div class="img">
+          <img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2185/coupons.jpg" alt="coupon img">
+          <a onclick="window.open('dcodenative://downloadCoupon?cid=4378')" id="4378" class="btn_coupon btn"></a>
+      </div>
+  </section>
+  
+
+-->
+
+
+<!-- MOBILE CHECK -->
+<script>
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+
+  } else {
+
+  }
+</script>
