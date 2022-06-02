@@ -369,5 +369,44 @@ parent.addEventListener("scroll", (e) => {
       window.addEventListener("DOMContentLoaded", scroll_function);
       window.addEventListener("resize", scroll_function);
       </script>
+
+      <!-- scroll 이벤트가 자주 발생하는데 DOM CONTENT를 수정하는 느린 작업을 실행하는데 걱정이 되실 때 대비 window requestAnimationFrame 코드-->
+
+      <!-- <script>
+        let scroll_effect = document.getElementsByClassName("scroll_effect");
+    for (let i=0; i < scroll_effect.length; i++) {
+      scroll_effect[i].classList.add("scroll_effect_off");
+    }
+
+    let scroll_function = () => {
+      try {
+        if (top && document.getElementsByClassName("scroll_effect_off").length > 0) {
+          for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
+            if (document.getElementsByClassName("scroll_effect_off")[i].getBoundingClientRect().top < top.innerHeight / 5 * 3  + top.scrollY && !document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
+              document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
+              document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
+            }
+          }
+          window.requestAnimationFrame(scroll_function);
+        } else if (!top) {
+          for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
+              if (!document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
+                document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
+                document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
+              }
+            }
+        }
+      } catch (exception) {
+          for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
+              if (!document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
+                document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
+                document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
+              }
+          }
+      }
+    }
+
+    window.requestAnimationFrame(scroll_function);
+  </script> -->
   </body>
 </html>

@@ -166,7 +166,6 @@ down_btn.addEventListener("click", () => {
           }
         }
       } catch (exception) {
-        if (!top) {
           e.currentTarget.removeEventListener("scroll", scroll_function);
           for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
             if (!document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
@@ -174,7 +173,6 @@ down_btn.addEventListener("click", () => {
               document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
             }
           }
-        }
       }
     }
 
@@ -182,5 +180,42 @@ down_btn.addEventListener("click", () => {
     top.addEventListener("scroll", scroll_function);
     window.addEventListener("DOMContentLoaded", scroll_function);
     window.addEventListener("resize", scroll_function);
-    </script>
+  </script>
+
+  <!-- <script>
+    let scroll_effect = document.getElementsByClassName("scroll_effect");
+    for (let i=0; i < scroll_effect.length; i++) {
+      scroll_effect[i].classList.add("scroll_effect_off");
+    }
+
+    let scroll_function = () => {
+      try {
+        if (top && document.getElementsByClassName("scroll_effect_off").length > 0) {
+          for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
+            if (document.getElementsByClassName("scroll_effect_off")[i].getBoundingClientRect().top < top.innerHeight / 5 * 3  + top.scrollY && !document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
+              document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
+              document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
+            }
+          }
+          window.requestAnimationFrame(scroll_function);
+        } else if (!top) {
+          for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
+              if (!document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
+                document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
+                document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
+              }
+            }
+        }
+      } catch (exception) {
+          for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
+              if (!document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
+                document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
+                document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
+              }
+          }
+      }
+    }
+
+    window.requestAnimationFrame(scroll_function);
+  </script> -->
 </html>
