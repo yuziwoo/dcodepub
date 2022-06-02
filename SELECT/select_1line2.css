@@ -247,11 +247,9 @@ main .about .text p:last-child {
         padding-top: 15px;
         font-size: 14px;
     }
-
     .pc_br {
         display: none;
     }
-
 }
 
 @media screen and (max-width: 315px) {

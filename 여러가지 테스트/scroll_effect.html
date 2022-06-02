@@ -154,22 +154,26 @@ down_btn.addEventListener("click", () => {
             if (document.getElementsByClassName("scroll_effect_off")[i].getBoundingClientRect().top < top.innerHeight / 5 * 3  + top.scrollY && !document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
               document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
               document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
-             }
-          } else {
-            break;
+            }
+          } else if (!top) {
+            e.currentTarget.removeEventListener("scroll", scroll_function);
+            for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
+              if (!document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
+                document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
+                document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
+              }
+            }
           }
-        }
-
-        if (!top) {
-          e.currentTarget.removeEventListener("scroll", scroll_function);
         }
       } catch (exception) {
         if (!top) {
           e.currentTarget.removeEventListener("scroll", scroll_function);
-        }
-      } finally {
-        if (!top) {
-          e.currentTarget.removeEventListener("scroll", scroll_function);
+          for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
+            if (!document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
+              document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
+              document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
+            }
+          }
         }
       }
     }
