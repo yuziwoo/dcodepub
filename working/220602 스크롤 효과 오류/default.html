@@ -29,6 +29,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://dcode-prod-bucket.s3.ap-northeast-2.amazonaws.com/content/itsdcode_scripts_3.min.js"></script>
     <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2099/common.js"></script>
+
+    <!-- scroll effect -->
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2173/scroll_effect.css">
+    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2212/common.js"></script>
     
     <style>
         /* CONTENTS CSS */
@@ -273,140 +277,5 @@
         </div>
       </section>
     </main>
-
-
-
-
-    <!-- QA CHECK LINE -->
-    <!-- 🌼 스크롤에 따라 컨텐츠가 나타나는 script
-
-오류 원인 : 
-1. scroll event를 최상위 window에 걸어놨기 때문에 react 싱글페이지 내부에서 페이지 이동을 하더라도 그 이벤트는 지속된다.
-2. scroll event 내부에서 호출하는 부모윈도우(parent) 또는 최상위윈도우(top) 코드를 사용하다가 페이지 이동을 하면 그 값이 null로 변경된다.
-
-테스트를 통해 알아낸 값 :
-1. iframe 내부에서 상위 윈도우를 호출하는 코드들은 해당 Iframe이 사라지는 시점 (react spa 이동)에 null로 값이 변경된다.
-
-해결 :
-  1.  scroll event 에 if(!top) 과 Try catch 문을 활용하여 해당 값이 null 일 경우 removeEventListener로 이벤트를 제거한다.
-2. 해당 페이지에서 나오면 최상위 윈도우에 걸려있는 현재의 이벤트를 e.currentTarget.removeEventListener 코드로 제거한다. -->
-
-<!-- https://staging-3.letsdcode.com/select/detail/!$ANyEjM
-staging-admin.letsdcode.com -->
-
-
-    <!-- 기존에 오류를 발생시켰던 코드 -->
-    <!-- <script>
-      let scroll_effect = document.getElementsByClassName("scroll_effect");
-
-let scroll_function = () => {
-    for (let i=0; i<scroll_effect.length; i++) {
-        if (parent.innerHeight / 10 * 9 + scroll_effect[i].getBoundingClientRect().top < parent.scrollY && !scroll_effect[i].classList.contains("scroll_effect_on")) {
-            scroll_effect[i].classList.add("scroll_effect_on");
-            } 
-    }
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-    scroll_function();
-})
-
-parent.addEventListener("resize", (e) => {
-  scroll_function();
-})
-
-parent.addEventListener("scroll", (e) => {
-    scroll_function();
-})
-    </script> -->
-
-
-    <!-- 현재 코드 ㄴ-->
-    <!-- scroll effect -->
-    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2173/scroll_effect.css">
-
-    <script>
-      // 클래스 생성
-      let scroll_effect = document.getElementsByClassName("scroll_effect");
-      for (let i=0; i < scroll_effect.length; i++) {
-        scroll_effect[i].classList.add("scroll_effect_off");
-      }
-  
-      // 스크롤 함수 생성
-      let scroll_function = (e) => {
-        try {
-          for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
-            if (top) {
-              if (document.getElementsByClassName("scroll_effect_off")[i].getBoundingClientRect().top < top.innerHeight / 5 * 3  + top.scrollY && !document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
-                document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
-                document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
-              }
-            } else if (!top) {
-              e.currentTarget.removeEventListener("scroll", scroll_function);
-              for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
-                if (!document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
-                  document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
-                  document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
-                }
-              }
-            }
-          }
-        } catch (exception) {
-          if (!top) {
-            e.currentTarget.removeEventListener("scroll", scroll_function);
-            for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
-              if (!document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
-                document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
-                document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
-              }
-            }
-          }
-        }
-      }
-  
-      // 스크롤 이벤트 추가
-      top.addEventListener("scroll", scroll_function);
-      window.addEventListener("DOMContentLoaded", scroll_function);
-      window.addEventListener("resize", scroll_function);
-      </script>
-
-      <!-- scroll 이벤트가 자주 발생하는데 DOM CONTENT를 수정하는 느린 작업을 실행하는데 걱정이 되실 때 대비 window requestAnimationFrame 코드-->
-
-      <!-- <script>
-        let scroll_effect = document.getElementsByClassName("scroll_effect");
-    for (let i=0; i < scroll_effect.length; i++) {
-      scroll_effect[i].classList.add("scroll_effect_off");
-    }
-
-    let scroll_function = () => {
-      try {
-        if (top && document.getElementsByClassName("scroll_effect_off").length > 0) {
-          for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
-            if (document.getElementsByClassName("scroll_effect_off")[i].getBoundingClientRect().top < top.innerHeight / 5 * 3  + top.scrollY && !document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
-              document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
-              document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
-            }
-          }
-          window.requestAnimationFrame(scroll_function);
-        } else if (!top) {
-          for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
-              if (!document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
-                document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
-                document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
-              }
-            }
-        }
-      } catch (exception) {
-          for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
-              if (!document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
-                document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
-                document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
-              }
-          }
-      }
-    }
-
-    window.requestAnimationFrame(scroll_function);
-  </script> -->
   </body>
 </html>

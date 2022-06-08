@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
     <!-- CDN  -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> <!-- 또는 css파일 직접 불러와도됨  -->
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> 
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2203/swiper-bundle.min.css"/> <!-- 또는 css파일 직접 불러와도됨  -->
+    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2203/swiper-bundle.min.js"></script> 
 
     <!-- 기본 높이 정해두기 (버벅임방지) -->
     <script>
@@ -29,6 +29,15 @@
 
       .swiper-wrapper {
         height: auto;
+      }
+
+      .swiper-slide {
+        background: blue;
+        height: 300px;
+      }
+
+      .swiper-slide:nth-child(even) {
+        background-color: pink;
       }
 
       /* 폰트 적용 */
@@ -63,6 +72,8 @@
           <div class="swiper-slide">Slide 2</div>
           <div class="swiper-slide">Slide 3</div>
           <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div>
+          <div class="swiper-slide">Slide 6</div>
         </div>
 
         <div class="swiper-pagination"></div>
@@ -121,7 +132,7 @@
         // centeredSlides: true, // (기본값 = false) 리스트를 센터에 고정하기
         // centeredSlidesBounds: true, // (기본값 = false) centeredSlides가 true일 경우 생기는 좌우측의 여백을 제거합니다.
 
-        // effect: 'fade',
+         effect: 'cards',
         /*
         이펙트 기본값 = slide
         fade = 페이드 인아웃
