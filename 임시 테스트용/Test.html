@@ -15,124 +15,72 @@
 
         gtag("config", "UA-68979793-14");
     </script>
-    <title>SPALWART</title>
+    <title>our legacy</title>
     
-    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2099/common.css" />
-    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2140/select_1line2.css">
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2153/common.css" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://dcode-prod-bucket.s3.ap-northeast-2.amazonaws.com/content/itsdcode_scripts_3.min.js"></script>
-    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2099/common.js"></script>
+    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2212/common.js"></script>
 
     <style>
         /* 콘텐츠 CSS */
         body {
-            overflow: hidden;
+            overflow: visible;
+            position: relative;
         }
 
-        main .main_visual {
-            background: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2140/visual_bg4.jpg") repeat center center;
-            /* background-size: auto auto; */
-            background-position: center center;
+        section {
+            width: 100%;
+            height: 5000px;
         }
 
-        main .main_visual .text {
-            text-align: center;
+        section:nth-child(1) {
+            background: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2215/visual_bg.jpg") no-repeat center center;
+            background-position: 0% 0%;
+            background-attachment: fixed;
+            position: relative;
         }
 
-        main .main_visual .product {
-            width: 708px;
-            position: absolute;
-            left: calc(50% - 354px);
-            bottom: 20px;
+        div {
+            width: 100%;
+            height: 800px;
         }
 
-        .about {
-            background-color: #0e524f;
-            color: white;
+        div:nth-child(2) {
+            background: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2209/visual_bg.jpg") no-repeat center center;
+            position: sticky;
+            top: 500px;
+            left: 0px;
         }
 
-        main .edit {
-            background: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2142/edit_bg.jpg") center center;
-        }
-
-        @media screen and (max-width: 1024px) {
-            main .main_visual .product {
-                width: 96%;
-                left: 2%;
-                max-width: 460px;
-                bottom: 60px;
-            }
-        }
-
-        @media screen and (min-width: 480px) and (max-width: 1024px){
-          main .main_visual .product {
-                max-width: 460px;
-                left: calc(50% - 230px);
-                bottom: 40px;
-            }
+        article {
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            background-color: pink;
         }
     </style>
   </head>
   <body>
     <!-- Content Area -->
     <main>
-      <section class="main_visual">
-        <div class="product">
-            <img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2140/product2.png" alt="product img">
-        </div>
-        <div class="text">
-          <p class="fw700">봄 · 여름 시즌으로 돌아온<br />이스트팩 x MM6 뉴 컬렉션</p>
-          <p>EASTPAK x MM6</p>
-          <p>22SS COLLECTION</p>
-        </div>
-      </section>
-
-      <section class="about txt_center">
-        <div class="text">
-          <p>이스트팩과 MM6 메종 마르지엘라가 선보이는 새로운 컬렉션은 초현실주의를 다루는 예술가들의 작품에서 영감을 얻어 디자인된 것이 가장 <br class="pc_br">큰 특징입니다. 특히 이번 디코드 셀렉트 딜을 통해 선보이는 드리핑 파커 백팩은 왜곡된 효과를 극대화시켜 녹아내리는듯한 착각마저 <br class="pc_br">들게 하는 디자인으로 이번 협업 프로젝트의 메인 아이템으로 주목받고 있으며 함께 라인업된 크루 숄더백은 이스트팩의 <br class="pc_br">시그니처 아이템 중 하나인 크루 월렛의 사이즈를 키워 컴팩트한 백으로 변화시킨 것이 특징입니다. <br class="pc_br">조절과 탈부착이 가능한 스트랩으로 다양한 스타일링에 자연스러운 궁합을 보여주죠.</p>
-          <p>최근 준 타카하시의 언더커버 그리고 텔파 클레멘스의 텔파와 같은 디자이너 브랜드와 협업을 진행하며 하이 패션에서 <br class="pc_br">독보적인 매력을 선보이고 있는 이스트팩의 백 컬렉션은 분명 봄·여름 시즌 특별한 아이템이 되어줄 것입니다. <br class="pc_br">성공적이었던 지난 시즌에 이어 MM6 메종 마르지엘라와 함께 이스트팩이 선보이는 <br class="pc_br">2022년 봄·여름 컬렉션을 지금 바로 디코드를 통해 직접 경험해보세요.</p>
-        </div>
-      </section>
-
-      <section class="edit">
-        <a type="/news/detail/2147" class="btn_link">
-          <div class="wrapper white">
-            <div class="text">
-                <p class="montserrat fw500">EDIT</p>
-                <p>MM6 메종 마르지엘라와<br />이스트팩의 새로운 컬렉션</p>
-            </div>
-            <img class="arrow" src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2059/arrow@2x.png" alt="바로가기"/>
-          </div>
-        </a>
-      </section>
-
-      <!-- <section class="notice">
-        <div class="wrapper">
-          <ul>
-            <li>본 상품들은 국내에서 배송되며, 주문 대량 발생 시 주문 후 출고까지 3-5일 소요될 수 있습니다.</li>
-            <li>주문 대량 발생 시 동시 주문이 발생하여 품절 취소가 발생할 수 있습니다.</li>
-            <li>주문 대량 발생 시 택배사의 사정에 따라 배송지연이 발생할 수 있습니다.</li>
-            <li>교환/취소를 원하시는 경우, 상품 수령 후 7일 이내 접수하셔야 합니다. <br class="for_pc">(단, 상품 택 제거, 상품 개봉 등으로 인한 상품 가치 훼손 시에는 교환/취소가 불가합니다)</li>
-            <li>상품 불량/하자 사유 외에 고객 사유로 인한 교환/취소의 경우, 반품 배송비는 고객 부담입니다.</li>
-        </ul>
-        </div>
-      </section> -->
-
-      <section class="notice2">
-        <div class="wrapper">
-          <div class="title fw700">
-            <p>배송안내</p>
-          </div>
-          <ul>
-            <li>본 상품들은 국내에서 배송되며, 주문 대량 발생 시 주문 후 출고까지 3-5일 소요될 수 있습니다.</li>
-            <li>주문 대량 발생 시 동시 주문이 발생하여 품절 취소가 발생할 수 있습니다.</li>
-            <li>주문 대량 발생 시 택배사의 사정에 따라 배송지연이 발생할 수 있습니다.</li>
-            <li>교환/취소를 원하시는 경우, 상품 수령 후 7일 이내 접수하셔야 합니다. <br class="for_pc">(단, 상품 택 제거, 상품 개봉 등으로 인한 상품 가치 훼손 시에는 교환/취소가 불가합니다)</li>
-            <li>상품 불량/하자 사유 외에 고객 사유로 인한 교환/취소의 경우, 반품 배송비는 고객 부담입니다.</li>
-          </ul>
-        </div>
+      <section>
+          <div></div>
+          <div></div>
+          <div></div>
       </section>
     </main>
   </body>
+
+  <script>
+      window.itsdcode_onscroll = (x, y, w, h) => {
+    console.log("hi");
+  }
+  window.itsdcode_onscroll = (x, y, w, h) => {
+    console.log("hi2");
+  }
+  </script>
 </html>
