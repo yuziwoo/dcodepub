@@ -1,0 +1,88 @@
+.scroll_effect {
+    transition: all 1.2s ;
+    opacity: 0;
+}
+
+.scroll_delay1 {
+    transition: all 1.2s 0.2s ;
+}
+
+.scroll_delay2 {
+    transition: all 1.2s 0.4s ;
+}
+
+.scroll_delay3 {
+    transition: all 1.2s 0.6s ;
+}
+
+.scroll_delay4 {
+    transition: all 1.2s 0.8s ;
+}
+
+.scroll_delay5 {
+    transition: all 1.2s 1s ;
+}
+
+.scroll_delay6 {
+    transition: all 1.2s 1.2s ;
+}
+
+.scroll_delay7 {
+    transition: all 1.2s 1.4s ;
+}
+
+.scroll_delay8 {
+    transition: all 1.2s 1.6s ;
+}
+
+.scroll_delay9 {
+    transition: all 1.2s 1.8s ;
+}
+
+.scroll_delay10 {
+    transition: all 1.2s 2s ;
+}
+
+.scroll_effect_up {
+    transform: translateY(40px);
+}
+
+.scroll_effect_down {
+    transform: translateY(-40px);
+}
+
+.scroll_effect_left {
+    transform: translateX(40px);
+}
+
+.scroll_effect_right {
+    transform: translateX(-40px);
+}
+
+.scroll_effect_new {
+    position: relative;
+    transition: opacity 0.8s;
+}
+
+.scroll_effect_new::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    background-color: aquamarine;
+    opacity: 1;
+    transition: all 1.2s  ;
+}
+
+.scroll_effect_on {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+.scroll_effect_on::after {
+    height: 0%;
+    opacity: 0.4;
+}
