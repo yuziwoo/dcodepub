@@ -268,3 +268,72 @@ figure {
 .fw900 {
   font-weight: 900;
 }
+
+
+
+/* 드롭다운 체크리스트 */
+
+.dropdown_check {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdown_check .check_button {
+  background-color: transparent;
+  outline: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333333;
+  transition: transform 0.3s;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #707070;
+}
+
+.dropdown_check .check_button:hover {
+  transform: scale(1.05);
+}
+
+.dropdown_check .list {
+  display: none;
+  text-align: center;
+  padding: 0px 20px;
+}
+
+.check_on .list {
+  display: block;
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0;
+  animation: opacity 1s 1 forwards;
+}
+
+.dropdown_check .list p strong {
+  display: block;
+  padding: 30px 0px 10px;
+}
+
+@keyframes opacity {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .dropdown_check .check_button {
+      font-size: 16px;
+  }
+  .dropdown_check .list {
+      font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .dropdown_check .list {
+      font-size: 12px;
+  }
+}

@@ -9,35 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
     <!-- CDN  -->
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2153/common.css" />
     <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2203/swiper-bundle.min.css"/> <!-- 또는 css파일 직접 불러와도됨  -->
     <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2203/swiper-bundle.min.js"></script> 
-
-    <!-- 기본 높이 정해두기 (버벅임방지) -->
-    <script>
-      if (parent) {
-          parent.document.getElementsByClassName("nciframe")[0].style.minHeight = `${parent.innerHeight}px`;
-      }
-    </script>
-
-    
 
     <style>
       .swiper1 {
         width: 600px;
         height: 300px;
-      }
-
-      .swiper-wrapper {
-        height: auto;
-      }
-
-      .swiper-slide {
-        background: blue;
-        height: 300px;
-      }
-
-      .swiper-slide:nth-child(even) {
-        background-color: pink;
       }
 
       /* 폰트 적용 */
@@ -56,6 +35,14 @@
       .font_nanumsquare {
         font-family: 'Nanum Square';
       }
+
+      /* 젠카쿠 폰트
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap');
+
+.font_zen {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+      */
     </style>
 
   </head>
@@ -88,15 +75,16 @@
     <!-- 간단한 스와이퍼
 
     const swiper = new Swiper (".swiper", {
-      loop: true,
-      allowTouchMove: false,
-      speed: 400,
-      slidesPerView: 1,
-      autoplay: {
-        delay: 1500,
-        disableOnInteraction: true,
-      }
-    })
+        loop: true,
+        allowTouchMove: false,
+        speed: 1500,
+        slidesPerView: 1,
+        effect: 'fade',
+        autoplay: {
+          delay: 1600,
+          disableOnInteraction: true,
+        }
+      })
 
   -->
 
@@ -230,45 +218,6 @@
       swiper.removeAllSlides(); // 슬라이드 제거
       swiper.removeSlide(Index); // 특정 슬라이드 제거 ( 쉼표를 통해 여러개도 제거 가능)
       */
-
-      // const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      //       const main = $(".main-wrap");
-      //       if (isMobile) {
-      //           main.removeClass("pc");
-      //           /* visual */
-      //           var swiper = new Swiper(".product-swiper", {
-      //               loop: true,
-      //               allowTouchMove: true,
-      //               speed: 400,
-      //               slidesPerView: 2.8,
-      //               spaceBetween: 15,
-      //               autoplay: {
-      //                   delay: 1600,
-      //                   disableOnInteraction: true,
-      //               },
-      //               scrollbar: {
-      //                   el: '.swiper-scrollbar',
-      //                   draggable: true,
-      //               },
-      //               breakpoints: {
-      //                   768: {
-      //                       slidesPerView: 3.8
-      //                   },
-      //                   1024: {
-      //                       slidesPerView: 4.8
-      //                   }
-      //               }
-      //           });
-      //       } else {
-      //           main.addClass("pc");
-      //           /* visual */
-      //           var swiper = new Swiper(".product-swiper", {
-      //               loop: false,
-      //               allowTouchMove: false,
-      //               slidesPerView: 5,
-      //               spaceBetween: 15
-      //           });
-      //       }
     </script>
 
     <style>
@@ -281,78 +230,6 @@
 
 
 
-<!-- <script>
-  $(".slick").slick({
-    vertical : false,
-    arrows: false,
-    slidesToScroll: 1,
-    slidesToShow: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    speed: 30000,
-    infinite: true,
-    pauseOnFocus: false,
-    pauseOnHover: false,
-    centerMode: true,
-    touchMove: false,
-    draggable: false,
-    cssEase: 'linear',
-
-    responsive: [
-        {
-            breakpoint: 1919,
-            settings: {
-                slidesToShow: 0.8,
-            }
-          },
-        {
-          breakpoint: 1500,
-          settings: {
-              slidesToShow: 0.7,
-          }
-          },
-        {
-          breakpoint: 1325,
-          settings: {
-              slidesToShow: 0.6,
-          }
-        },
-        {
-          breakpoint: 1055,
-          settings: {
-              slidesToShow: 0.4,
-              speed: 34000,
-          }
-        },
-        {
-          breakpoint: 565,
-          settings: {
-              slidesToShow: 0.3,
-          }
-        },
-        {
-          breakpoint: 450,
-          settings: {
-              slidesToShow: 0.25
-          }
-        },
-        {
-          breakpoint: 401,
-          settings: {
-              slidesToShow: 0.23,
-              speed: 34000,
-          }
-        },
-        {
-          breakpoint: 360,
-          settings: {
-              slidesToShow: 0.15,
-              speed: 34000,
-          }
-        }
-    ]
-   });
-</script> -->
 
 
 
@@ -402,4 +279,23 @@
   } else {
 
   }
+</script>
+
+
+<!-- 드롭다운 체크리스트 -->
+<div class="dropdown_check dropdown_check1">
+  <button class="check_button check_button1"><p>꼭 확인해주세요!</p></button>
+  <div class="list">
+    <p>
+      <strong>유의 사항</strong>
+      - 22.06.20 ~ 22.06.30 동안 ID 당 1회 다운로드 가능합니다.<br>
+      - 본 프로모션은 당사 사정에 의해 사전 공지 없이 중단될 수 있습니다.
+    </p>
+  </div>
+</div>
+<script>
+  document.getElementsByClassName("check_button1")[0].addEventListener("click", () => {
+    document.getElementsByClassName("dropdown_check1")[0].classList.toggle("check_on");
+    _dcode_resize();
+  })
 </script>

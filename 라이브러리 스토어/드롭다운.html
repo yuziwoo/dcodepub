@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68979793-14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "UA-68979793-14");
+    </script>
+    <title>drop down menu</title>
+    
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2153/common.css" />
+
+    <script src="https://dcode-prod-bucket.s3.ap-northeast-2.amazonaws.com/content/itsdcode_scripts_3.min.js"></script>
+    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2099/common.js"></script>
+
+
+  </head>
+  <body>
+    <!-- Content Area -->
+    <main>
+        <!-- 드롭다운 체크리스트 -->
+<div class="dropdown_check dropdown_check1">
+    <button class="check_button check_button1"><p>꼭 확인해주세요!</p></button>
+    <div class="list">
+      <p>
+        <strong>유의 사항</strong>
+        - 22.06.20 ~ 22.06.30 동안 ID 당 1회 다운로드 가능합니다.<br>
+        - 본 프로모션은 당사 사정에 의해 사전 공지 없이 중단될 수 있습니다.
+      </p>
+    </div>
+  </div>
+  <script>
+    document.getElementsByClassName("check_button1")[0].addEventListener("click", () => {
+      document.getElementsByClassName("dropdown_check1")[0].classList.toggle("check_on");
+      _dcode_resize();
+    })
+  </script>
+    </main>
+  </body>
+</html>
