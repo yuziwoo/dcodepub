@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+.raffle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f1ed;
+}
+
+.section_timer {
+    width: 100%;
+    padding: 80px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+.section_timer .box {
+    margin-right: 40px;
+}
+
+.section_timer .box:last-child {
+    margin-right: 0px;
+}
+
+.section_timer .info {
+    width: 100%;
+    display: block;
+    font-size: 15px;
+    color: #1a1a1a;
+    padding-bottom: 15px;
+}
+
+.section_timer .card_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 107px;
+    font-weight: 700;
+    color: #de4848;
+}
+
+.section_timer .card {
+    width: 100px;
+    height: 110px;
+    position: relative;
+    margin-right: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.section_timer .card .half_card {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.section_timer .card::before {
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #dedede;
+    mix-blend-mode: darken;
+}
+
+.section_timer .card .half_card .timer {
+    background-color: #ffffff;
+    box-shadow: inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    width: 100px;
+    height: 110px;
+    perspective: 200px;
+    transform-origin: center center;
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+
+.section_timer .card .bottom .timer {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+.section_timer .card .top .timer {
+    position: absolute;
+    top: 0;
+    left: 0;
+} 
+
+.section_timer .card .half_card .front {
+    z-index: 1;
+}
+
+
+.section_timer .card .bottom .front {
+    transform: rotateX(90deg);
+    background-color: white;
+    box-shadow: none;
+}
+
+.section_timer .card .top .animation {
+    animation: card_top 0.9s 1 forwards linear;
+}
+
+@keyframes card_top {
+    from {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+    25% {
+        transform: rotateX(-90deg);
+        opacity: 1;
+    }
+    26% {
+        opacity: 0;
+    }
+    27% {
+        opacity: 0;
+        transform: rotateX(0deg);
+    }
+    99% {
+        opacity: 0;
+        transform: rotateX(0deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+.section_timer .card .bottom .animation {
+    animation: card_bottom 0.9s 1 forwards linear;
+}
+
+@keyframes card_bottom {
+    from {
+        transform: rotateX(90deg);
+        opacity: 1;
+    }
+    24% {
+        transform: rotateX(90deg);
+        opacity: 1;
+    }
+    97% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+    98% {
+        transform: rotateX(0deg);
+        opacity: 0;
+    }
+    99%{
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateX(90deg);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .section_timer .box {
+        margin-right: 8px;
+    }
+    .section_timer .box:last-child {
+        margin-right: 0px;
+    }
+    .section_timer .info {
+        font-size: 11px;
+        padding-bottom: 10px;
+    }
+    .section_timer .card_wrap {
+        font-size: 30px;
+    }
+    .section_timer .card {
+        width: 26px;
+        height: 32px;
+        margin-right: 5px;
+        border-radius: 3px;
+    }
+    .section_timer .card .half_card .timer {
+        width: 26px;
+        height: 32px;
+        border-radius: 5px;
+    }
+}

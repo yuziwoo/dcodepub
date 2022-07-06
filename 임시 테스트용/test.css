@@ -1,243 +1,64 @@
-/* main visual */
-.main_visual {
+.no_coupon {
     width: 100%;
-    background: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2185/main_bg.jpg") center center repeat;
-    padding: 60px 0px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 100px 20px 60px;
 }
 
-.main_visual .preorder {
-    width: 40%;
-    max-width: 193px;
-    padding-bottom: 30px;
-}
-
-.main_visual .content_wrap {
+.no_coupon .up,
+.no_coupon .down {
     width: 100%;
-    max-width: 1439px;
+    max-width: 1300px;
+    padding-left: 20px;
 }
 
-.main_visual .circle {
-    transform: translateY(55%);
+.no_coupon .up {
+    padding-bottom: 50px;
 }
 
-.main_visual .circle img {
-    width: 100%;
+.no_coupon .down {
+    padding-top: 40px;
+    border-top: 1px solid #1f1f1f;
 }
 
-.main_visual .circle img:nth-child(1) {
-    display: block;
-}
-.main_visual .circle img:nth-child(2) {
-    display: none;
-}
-.main_visual .circle img:nth-child(3) {
-    display: none;
+.box {
+    padding-bottom: 40px;
+    display: flex;
 }
 
-.main_visual .swiper {
-    width: 100%;
-    max-width: 1439px;
+.left {
+    width: 200px;
+    line-height: 30px;
+}
+
+.left h1 {
+    font-size: 30px;
+}
+
+.left p {
+    font-size: 24px;
+}
+
+.right p {
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.down .right p {
+    font-size: 18px;
+    color: #373737;
+    padding-left: 15px;
     position: relative;
 }
 
-.main_visual .swiper::after {
-    content: "";
-    display: block;
+.down .right p::before {
+    content: "-";
+    left: 0;
     position: absolute;
-    background-image: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2185/main_logo.png");
-    background-size: 100% auto;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 16.678%;
-    height: 39%;
-    left: 41.661%;
-    top: 30.5%;
-    z-index: 1;
 }
 
-@media screen and (max-width: 1200px) {
-    .main_visual .preorder {
-        padding-bottom: 50px;
-    }
-    .main_visual .circle img:nth-child(1) {
-        display: none;
-    }
-    .main_visual .circle img:nth-child(2) {
-        display: block;
-    }
-    .main_visual .circle img:nth-child(3) {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .main_visual {
-        padding: 40px 0px 70px;
-    }
-    .main_visual .preorder {
-        padding-bottom: 20px;
-    }
-    .main_visual .circle img:nth-child(1) {
-        display: none;
-    }
-    .main_visual .circle img:nth-child(2) {
-        display: none;
-    }
-    .main_visual .circle img:nth-child(3) {
-        display: block;
-    }
-}
-
-
-
-
-
-/* titel banner */
-.title_banner {
-    text-align: center;
-    padding: 60px 0px;
-    background-image: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2185/title_bg.jpg");
-    background-repeat: repeat;
-    background-position: center center;
-    color: white;
-}
-
-.title_banner p:nth-child(1) {
-    font-size: 24px;
-    font-weight: 500;
-    padding-bottom: 20px;
-}
-
-.title_banner p:nth-child(2) {
-    font-size: 22px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-}
-
-@media screen and (max-width: 785px) {
-    .title_banner {
-        padding: 50px 0px;
-    }
-    .title_banner p:nth-child(1) {
-        font-size: 16px;
-        padding-bottom: 15px;
-    }
-    .title_banner p:nth-child(2) {
-        font-size: 15px;
-    }
-}
-
-@media screen and (max-width: 330px) {
-    .title_banner {
-        padding: 50px 0px;
-    }
-    .title_banner p:nth-child(1) {
-        font-size: 14px;
-        padding-bottom: 15px;
-    }
-    .title_banner p:nth-child(2) {
-        font-size: 13px;
-    }
-}
-
-
-/* coupon */
-.coupon .coupon_wrap .coupon_box .icon {
-    background-color: #fff7b3;
-}
-
-
-.content {
-    width: 100%;
-}
-
-.content img {
-    width: 100%;
-    display: block;
-}
-
-.pc_mob img:nth-child(1) {
-    display: block;
-}
-
-.pc_mob img:nth-child(2) {
-    display: none;
-}
-
-@media screen and (max-width: 840px) {
-    .pc_mob img:nth-child(1) {
-        display: none;
-    }
-    
-    .pc_mob img:nth-child(2) {
-        display: block;
-    }
-}
-
-
-/* bottom */
-.bottom {
-    background: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2185/main_bg.jpg") center center repeat;
-    display: flex;
-    justify-content: center;
-    padding: 80px 0px;
-    transform: translateY(-1px);
-}
-
-.bottom .content_wrap {
-    width: 100%;
-    max-width: 1400px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.bottom .content_wrap .box1 {
-    width: 17.07%;
-    animation: rotating 3s 1.5s infinite;
-}
-
-.bottom .content_wrap .box2 {
-    align-self: flex-end;
-    text-align: right;
-    padding-right: 2.78%;
-}
-
-@keyframes rotating {
-    from {
-        transform: rotateY(0deg);
-    }
-    50% {
-        transform: rotateY(360deg);
-    }
-    to {
-        transform: rotateY(360deg);
-    }
-}
-
-.bottom .content_wrap .box2 p:nth-child(1) {
-    font-size: 27px;
-    padding-bottom: 50px;
-    line-height: 1.1;
-    font-weight: 500;
-}
-
-.bottom .content_wrap .box2 p:nth-child(2) {
-    font-size: 40px;
-    font-weight: 600;
-}
-
-.bottom .content_wrap .box3 {
-    width: 58.14%;
-}
-
-.eco_card {
-    transform:translateY(-1px);
-}
-
-@media screen and (max-width:840px) {
+@media screen and (max-width: 1300px) {
     
 }

@@ -1,23 +1,28 @@
-function solution(record) {
-    let last = {}
-    for (let i = 0; i < record.length; i++) {
-      let id = record[i].split(' ')[1]
-      let nick = record[i].split(' ')[2]
-      if (nick) {
-        last[id] = nick
-      }
+
+
+
+  function solution(record) {
+    var answer = [];
+    class User {
+        constructor (nickname) {
+            this.nickname = nickname;
+        }
+        getNickname () {
+            return this.nickname
+        }
+        setNickname (nickname) {
+            this.nickname = nickname;
+        }
     }
-  
-    let records = []
-  
-    for (let i = 0; i < record.length; i++) {
-      let action = record[i].split(' ')[0]
-      if (action === 'Enter') {
-        records.push(`${last[record[i].split(' ')[1]]}님이 들어왔습니다.`)
-      } else if (action === 'Leave') {
-        records.push(`${last[record[i].split(' ')[1]]}님이 나갔습니다.`)
-      }
-    }
-  
-    return records
-  }
+    let user_array = [];
+    record.forEach((value, index, arr) => {
+        let split = value.split(" ");
+        if (value.startsWith("Enter")) {
+            let ;
+            for (let i=0; i<user_array.length; i++) {
+                if
+            }
+        }
+    })
+    return answer;
+}
