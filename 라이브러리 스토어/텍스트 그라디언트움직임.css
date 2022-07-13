@@ -1,0 +1,329 @@
+.banner_wrap .banner img {
+    width: 100%;
+    display: block;
+}
+
+.checklist {
+    text-align: center;
+    width: 100%;
+    line-height: 2;
+    padding: 70px 0px 80px;
+    color: #1d1d1f;
+    background-image: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2295/checklist_bg.jpg");
+    background-repeat: repeat;
+    background-position: center center;
+    letter-spacing: -0.02em;
+}
+
+.checklist h1 {
+    font-size: 42px;
+    padding-bottom: 25px;
+}
+
+.checklist p {
+    font-size: 22px;
+}
+
+.banner_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0px 60px;
+    flex-direction: column;
+}
+
+.banner_wrap .banner {
+    width: 100%;
+    max-width: 1360px;
+    padding-bottom: 0px;
+}
+
+.category {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60px;
+}
+
+.category ul {
+    width: 90%;
+    max-width: 1360px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.category ul li {
+    width: calc(25% - 3.8px);
+    background: rgb(40, 40, 40);
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 0px;
+    overflow: hidden;
+    color: rgb(150, 150, 150);
+    transition: all 0.5s;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.category ul li a {
+    padding: 20px 0px;
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 0.5s;
+}
+
+.category ul li a h1 {
+    font-weight: 400;
+    font-size: 14px;
+    transition: all 0.5s;
+}
+
+.category ul li:hover,
+.category ul .active {
+    border: 1px solid rgb(40, 40, 40);
+}
+
+.category ul li:hover a,
+.category ul .active a {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.category ul li:hover a h1,
+.category ul .active a h1 {
+    font-weight: 700;
+    color: white;
+}
+
+@media screen and (max-width: 780px) {
+    .checklist {
+        padding: 45px 10px 50px;
+    }
+    .checklist h1 {
+        font-size: 22px;
+        padding-bottom: 15px;
+    }
+    .checklist p {
+        font-size: 13px;
+    }
+    .banner_wrap {
+        padding: 0px 0px 40px;
+    }
+    .banner_wrap .banner {
+        padding-bottom: 0px;
+    }
+    .category {
+        padding-bottom: 40px;
+    }
+    .category ul li {
+        width: calc(50% - 2.5px);
+    }
+    .category ul li a {
+        padding: 14px 0px;
+    }
+    .category ul li a h1 {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .checklist p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .checklist h1 {
+        font-size: 20px;
+        padding-bottom: 12px;
+    }
+    .checklist p {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 315px) {
+    .checklist h1 {
+        font-size: 20px;
+        padding-bottom: 12px;
+    }
+    .checklist p {
+        font-size: 10px;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+.main_visual {
+    padding: 100px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+.main_visual .title {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.main_visual .title h3 {
+    font-size: 110px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.2s;
+}
+
+.main_visual .title h1 {
+    font-size: 200px;
+    font-weight: 700;
+    line-height: 0.9;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.2s 0.6s;
+}
+
+.main_visual .red {
+    color: #ff2222;
+}
+
+.main_visual .sub {
+    padding-top: 60px;
+}
+
+.main_visual .sub p {
+    font-size: 26px;
+}
+
+.main_visual .title .gradient {
+    display: inline-block;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 200% 100%, 100% 100%;
+    /* background-image: linear-gradient(100deg, transparent 0%,#5AC8FA 30%,transparent 70%) ,linear-gradient(90deg,#194BB5,#009DE4); */
+    background-image: linear-gradient(100deg, transparent 0%,#ff8383 30%,transparent 70%) ,linear-gradient(90deg,#ff2222,#f83636);
+    background-position: 150%;
+    animation: gradient 4s 2.7s infinite;
+    transition: all 1.5s 1.2s;
+}
+
+/* 참고 https://www.apple.com/kr/macbook-air-m2/   */
+
+@keyframes gradient {
+    from {
+        background-position: 150%;
+    }
+    50% {
+        background-position: -150%;
+    }
+    100% {
+        background-position: -150%;
+    }
+}
+
+.main_visual_on .title h3 {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.main_visual_on .title h1 {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+@media screen and (max-width: 760px) {
+    .main_visual {
+        padding: 60px 0px 70px;
+    }
+    .main_visual .title h3 {
+        font-size: 80px;
+        padding-bottom: 30px;
+        transform: translateY(20px);
+    }
+    .main_visual .title h1 {
+        font-size: 160px;
+    }
+    .main_visual .sub {
+        padding-top: 40px;
+    }
+    .main_visual .sub p {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .main_visual {
+        padding: 60px 0px 70px;
+    }
+    .main_visual .title h3 {
+        font-size: 60px;
+        padding-bottom: 30px;
+        transform: translateY(20px);
+    }
+    .main_visual .title h1 {
+        font-size: 120px;
+    }
+    .main_visual .sub {
+        padding-top: 40px;
+    }
+    .main_visual .sub p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .main_visual {
+        padding: 60px 0px 40px;
+    }
+    .main_visual .title h3 {
+        font-size: 50px;
+        padding-bottom: 30px;
+        transform: translateY(20px);
+    }
+    .main_visual .title h1 {
+        font-size: 100px;
+    }
+    .main_visual .sub {
+        padding-top: 70px;
+    }
+    .main_visual .sub p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+.br_380 {
+    display: none;
+}
+
+@media screen and (max-width: 380px) {
+    .main_visual .br_380 {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .main_visual {
+        padding: 50px 0px 40px;
+    }
+    .main_visual .title h3 {
+        font-size: 40px;
+        padding-bottom: 30px;
+        transform: translateY(20px);
+    }
+    .main_visual .title h1 {
+        font-size: 80px;
+    }
+    .main_visual .sub {
+        padding-top: 70px;
+    }
+    .main_visual .sub p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}

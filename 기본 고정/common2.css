@@ -1,0 +1,194 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap');
+
+body {
+  font-family: "Lato", "Apple SD Gothic Neo", "Spoqa Han Sans Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+.font_lato {
+  font-family: "Lato", sans-serif;
+}
+.font_notosans {
+  font-family: "Noto Sans KR", sans-serif;
+}
+.font_spoqa {
+  font-family: "Spoqa Han Sans Neo", sans-serif;
+}
+.font_archivo {
+  font-family: "Archivo", sans-serif;
+}
+.font_montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+.font_cabin {
+  font-family: 'Cabin', sans-serif;
+}
+.font_zen {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+/* Default */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input, button, textarea {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+img {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-user-drag: none;
+    pointer-events : none;
+}
+ol, ul, dl, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+a:link, a:hover, a:active, a:visited {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn_link, .btn_coupon, .btn_event {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    line-height: 1;
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+            user-select: none;
+    -webkit-text-size-adjust: none;
+    -webkit-touch-callout: none;
+    word-break : keep-all;
+    overflow-wrap : break-word;
+}
+figure {
+  line-height: 0;
+}
+/* Font Color */
+.white {
+  color: #fff;
+}
+.black {
+  color: #000;
+}
+
+/* dropdown checklist */
+
+.dropdown_check {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdown_check .check_button {
+  background-color: transparent;
+  outline: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333333;
+  transition: transform 0.3s;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #707070;
+}
+
+.dropdown_check .check_button:hover {
+  transform: scale(1.05);
+}
+
+.dropdown_check .list {
+  display: none;
+  text-align: center;
+  padding: 0px 20px;
+}
+
+.check_on .list {
+  display: block;
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0;
+  animation: opacity 1s 1 forwards;
+}
+
+.dropdown_check .list p strong {
+  display: block;
+  padding: 30px 0px 10px;
+}
+
+@keyframes opacity {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .dropdown_check .check_button {
+      font-size: 16px;
+  }
+  .dropdown_check .list {
+      font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .dropdown_check .list {
+      font-size: 12px;
+  }
+}
+
+main {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.custom_mob,
+.custom_mobflex {
+  display: none!important;
+}
+
+@media screen and (max-width: 780px) {
+  .custom_pc {
+      display: none!important;
+  }
+  .custom_mob {
+      display: block!important;
+  }
+  .custom_mobflex {
+      display: flex!important;
+  }
+}

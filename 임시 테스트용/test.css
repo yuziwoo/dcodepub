@@ -1,64 +1,121 @@
-.no_coupon {
+.main_visual {
     width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px 20px 60px;
 }
 
-.no_coupon .up,
-.no_coupon .down {
+.main_visual .bg,
+.main_visual .bg img,
+.main_visual .content img,
+.banner_wrap .banner img {
     width: 100%;
-    max-width: 1300px;
-    padding-left: 20px;
+    display: block;
 }
 
-.no_coupon .up {
-    padding-bottom: 50px;
-}
-
-.no_coupon .down {
-    padding-top: 40px;
-    border-top: 1px solid #1f1f1f;
-}
-
-.box {
-    padding-bottom: 40px;
-    display: flex;
-}
-
-.left {
-    width: 200px;
-    line-height: 30px;
-}
-
-.left h1 {
-    font-size: 30px;
-}
-
-.left p {
-    font-size: 24px;
-}
-
-.right p {
-    font-size: 22px;
-    line-height: 1.5;
-}
-
-.down .right p {
-    font-size: 18px;
-    color: #373737;
-    padding-left: 15px;
-    position: relative;
-}
-
-.down .right p::before {
-    content: "-";
-    left: 0;
+.main_visual .content {
+    width: 38.54%;
     position: absolute;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.5s;
 }
 
-@media screen and (max-width: 1300px) {
-    
+.main_visual_on .content {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.checklist {
+    text-align: center;
+    width: 100%;
+    line-height: 2;
+    padding: 80px 0px;
+    color: #1d1d1f;
+    background-image: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2285/checklist_bg.jpg");
+    background-repeat: repeat;
+    background-position: center center;
+    letter-spacing: -0.02em;
+}
+
+.checklist h1 {
+    font-size: 42px;
+    padding-bottom: 25px;
+}
+
+.checklist p {
+    font-size: 22px;
+}
+
+.banner_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0px 60px;
+    flex-direction: column;
+}
+
+.banner_wrap .banner {
+    width: 100%;
+    max-width: 1360px;
+    padding-bottom: 5px;
+}
+
+.category {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60px;
+}
+
+.category ul {
+    width: 90%;
+    max-width: 1360px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.category ul li {
+    width: calc(20% - 4px);
+    background-image: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2285/button.jpg");
+    background-position: center top;
+    background-size: cover;
+    background: rgb(40, 40, 40);
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 0px;
+    overflow: hidden;
+    color: rgb(150, 150, 150);
+    transition: all 0.5s;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.category ul li a {
+    padding: 20px 0px;
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 0.5s;
+}
+
+.category ul li a h1 {
+    font-weight: 400;
+    font-size: 14px;
+    transition: all 0.5s;
+}
+
+.category ul li:hover,
+.category ul .active {
+    border: 1px solid rgb(40, 40, 40);
+}
+
+.category ul li:hover a,
+.category ul .active a {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.category ul li:hover a h1,
+.category ul .active a h1 {
+    font-weight: 700;
+    color: white;
 }

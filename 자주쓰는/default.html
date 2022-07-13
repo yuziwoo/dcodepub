@@ -12,25 +12,23 @@
             dataLayer.push(arguments);
         }
         gtag("js", new Date());
-
         gtag("config", "UA-68979793-14");
     </script>
 
     <title>컨텐츠 제목</title>
 
     <!-- CSS -->    
-    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2153/common.css" />
-    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2173/scroll_effect.css">
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2277/common2.css">
+    <link rel="stylesheet" href="custom.css">
 
     <!-- SCRIPT  -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://dcode-prod-bucket.s3.ap-northeast-2.amazonaws.com/content/itsdcode_scripts_3.min.js"></script>
-
-    <!-- EFFECT SCRIPT 선택 -->
-    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2220/common.js">/* 기본 */</script>
-    <!-- <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2220/common_scroll.js">/* Scroll 기능 - Resize 자유 */</script>
-    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2220/common_resize.js">/* Resize 기능 - Scroll 자유 */</script>
-    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2220/common_scroll_resize.js">/* Scroll, Resize 기능 */</script> -->
+    <script>
+      window.addEventListener("resize", () => {
+        _dcode_resize();
+      })
+    </script>
     
     <style>
         /* CONTENTS CSS */
