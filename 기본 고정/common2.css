@@ -6,6 +6,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap');
 
+@font-face {
+  font-family: 'One Title';
+  src: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/ONE Mobile Title OTF.otf");
+}
+.font_one {
+  font-family: 'One Title';
+}
+
+@font-face {
+  font-family: 'Nanum Square';
+  src: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2190/NanumSquareR.otf");
+}
+.font_nanumsquare {
+  font-family: 'Nanum Square';
+}
+
 body {
   font-family: "Lato", "Apple SD Gothic Neo", "Spoqa Han Sans Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
 }
@@ -60,7 +76,7 @@ img {
     pointer-events : none;
 }
 ol, ul, dl, li {
-    list-style: none;
+    dropdown_list-style: none;
 }
 a {
     text-decoration: none;
@@ -70,7 +86,6 @@ a:link, a:hover, a:active, a:visited {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
 }
-
 .btn_link, .btn_coupon, .btn_event {
   display: block;
   width: 100%;
@@ -103,15 +118,21 @@ figure {
   color: #000;
 }
 
-/* dropdown checklist */
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
 
-.dropdown_check {
+/* dropdown list */
+.dropdown_box {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.dropdown_check .check_button {
+.dropdown_box .dropdown_button {
   background-color: transparent;
   outline: none;
   font-size: 22px;
@@ -123,17 +144,17 @@ figure {
   text-decoration-color: #707070;
 }
 
-.dropdown_check .check_button:hover {
+.dropdown_box .dropdown_button:hover {
   transform: scale(1.05);
 }
 
-.dropdown_check .list {
+.dropdown_box .dropdown_list {
   display: none;
   text-align: center;
   padding: 0px 20px;
 }
 
-.check_on .list {
+.check_on .dropdown_list {
   display: block;
   font-size: 16px;
   line-height: 1.8;
@@ -141,7 +162,7 @@ figure {
   animation: opacity 1s 1 forwards;
 }
 
-.dropdown_check .list p strong {
+.dropdown_box .dropdown_list p strong {
   display: block;
   padding: 30px 0px 10px;
 }
@@ -156,16 +177,16 @@ figure {
 }
 
 @media screen and (max-width: 780px) {
-  .dropdown_check .check_button {
+  .dropdown_box .dropdown_button {
       font-size: 16px;
   }
-  .dropdown_check .list {
+  .dropdown_box .dropdown_list {
       font-size: 13px;
   }
 }
 
 @media screen and (max-width: 350px) {
-  .dropdown_check .list {
+  .dropdown_box .dropdown_list {
       font-size: 12px;
   }
 }

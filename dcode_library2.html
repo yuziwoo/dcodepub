@@ -8,31 +8,119 @@
     </body>
 </html>
 
-    <!-- 디코드 앵커태그 -->
-    <!-- 하이퍼링크 --> <a type="/select/detail/2278" class="btn_link"></a>
-    <!-- 쿠폰 --> <a onclick="window.open('dcodenative://downloadCoupon?cid=4368')" id="4368" class="btn_coupon btn"></a>
-    <!-- 오픈알림 --> <a onclick="window.open('https://itsdcode.page.link/pushpush')" type="/events/push" class="btn_event btn_alarm btn"></a>
-    <!-- 응모하기 -->
-      <a onclick="joinlottery()"></a>
-      <script>
-        const joinlottery = () => {
-            itsdcode_script_handleEvent("joinlottery", { eventId: 37, choiceNum: 16 })
-                .then(({success, message}) => {
-                  if(success) {
-                    _dcode_alert("응모되었습니다.");
-                  } else {
-                    _dcode_alert(message);
-                  }
-                })
-        }
-      </script>
+<!-- 하이퍼링크 --> <a onclick='dsl.route("/select/detail/2300")'></a>
+<!-- 쿠폰 다운로드 --> <a onclick='dsl.coupon(5232)'></a>
+<!-- 오픈알림 --> <a onclick='dsl.push()'></a>
+<!-- 응모하기 --> <a onclick='dsl.apply(id, choiceNum)'></a>
+<!-- 응모하기2 --> <a onclick='dsl.apply2(id, choiceNum = 1, message, button_message, target)'></a>
 
-    <!-- 디코드 스크립트 -->
-    <script>
-        async function itsdcode_onStart(env) {
-            itsdcode_script_handleEvent("scrollTo", { y: category.offsetTop - 40});
-        }
-    </script>
+<!-- 드롭다운 체크리스트 -->
+<div class="dropdown_box">
+    <button class="dropdown_button" onclick='dsl.dropdown(0)'><p>꼭 확인해주세요!</p></button>
+    <div class="dropdown_list">
+        <p>
+            <strong>유의 사항</strong>
+            - 22.06.20 ~ 22.06.30 동안 ID 당 1회 다운로드 가능합니다.<br>
+            - 본 프로모션은 당사 사정에 의해 사전 공지 없이 중단될 수 있습니다.
+        </p>
+    </div>
+</div>
+
+<!-- 스크롤 이벤트 -->
+<link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2173/scroll_effect.css">
+<script>
+    dsl.scroll_basic();
+    async function itsdcode_onStart(env) {
+        dsl.set_position(env);
+    }
+</script>
+
+<!-- resize -->
+<script>
+    dsl.resize();
+</script>
+
+<!-- 아무 스크립트도 적용하고 싶지 않을 때 -->
+<script>
+    window.addEventListener("resize", () => {
+        dsl.resize();
+    })
+</script>
+
+<!-- alert -->
+<script>
+    dsl.alert("내용만 알리기");
+    dsl.alert("내용", "타이틀", "확인", true); // 마지막은 EXIT 기능 T/F
+    dsl.alert2("내용", "어디어디로 이동하기문구", "select/detail/2300"); // route 기능이 포함된 alert
+</script>
+
+<!-- confirm -->
+<button onclick='confirm("message", "title", "yes", "no")'></button>
+<script>
+    async function confirm(message, title, yes, no) {
+        let answer = await dsl.confirm(message, title, yes, no);
+        console.log(answer);
+    }
+</script>
+
+<!-- header 높이값 받아오기 -->
+<script>
+    async function itsdcode_onStart(env) {
+        let header_height = await dsl.header_height();
+        console.log(header_height);
+    }
+</script>
+
+<!-- queryselector -->
+<script>
+    async function itsdcode_onStart(env) {
+        const header = await dsl.querySelector(".headerWrap");
+        console.log(header);
+    }
+</script>
+
+<!-- queryselectorAll -->
+<script>
+    async function itsdcode_onStart(env) {
+        const header = await dsl.querySelectorAll(".headerWrap");
+        console.log(header);
+    }
+</script>
+
+<!-- 현재 위치 포지션 받아오기 -->
+<script>
+    async function itsdcode_onStart(env) {
+        const current = await dsl.getCurrentScroll();
+        console.log(current.x, current.y);
+    }
+</script>
+
+<!-- 스크롤 이동시키기 -->
+<button class="scroll_button"></button>
+<script>
+    async function itsdcode_onStart(env) {
+        let iframeWrap = await dsl.querySelectorAll(".iframeWrap");
+        document.getElementsByClassName("scroll_button")[0].addEventListener("click", () => {
+            if (iframeWrap) {
+                dsl.scrollTo(iframeWrap[1].offsetTop);
+            }
+        })
+    }
+</script>
+
+
+
+
+
+<!-- 기본 스크립트 -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://dcode-prod-bucket.s3.ap-northeast-2.amazonaws.com/content/itsdcode_scripts_3.min.js"></script>
+
+
+<!-- 디코드 스크립트 라이브러리 활용하기 -->
+<!-- 디코드 스크립트 라이브러리 -->
+<script src="https://dcode-develop-account-dev-bucket.s3.ap-northeast-2.amazonaws.com/2209/test.js"></script>
+
 
     <!-- Vimeo 비디오 -->
     <div style="position:relative;"><iframe src="https://player.vimeo.com/video/726654662?badge=0&background=1&autoplay=1&loop=1&autopause=0&muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="어떤 착장에도_1.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
@@ -79,86 +167,6 @@
     </script>
 
 
-    <!-- 드롭다운 체크리스트 -->
-    <div class="dropdown_check dropdown_check1">
-        <button class="check_button check_button1"><p>꼭 확인해주세요!</p></button>
-        <div class="list">
-            <p>
-                <strong>유의 사항</strong>
-                - 22.06.20 ~ 22.06.30 동안 ID 당 1회 다운로드 가능합니다.<br>
-                - 본 프로모션은 당사 사정에 의해 사전 공지 없이 중단될 수 있습니다.
-            </p>
-        </div>
-    </div>
-    <script>
-        document.getElementsByClassName("check_button1")[0].addEventListener("click", () => {
-            document.getElementsByClassName("dropdown_check1")[0].classList.toggle("check_on");
-            _dcode_resize();
-        })
-    </script>
-
-
-<style>
-    /* 자주쓰는 폰트 적용 */
-    @font-face {
-        font-family: 'One Title';
-        src: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/ONE Mobile Title OTF.otf");
-    }
-    .font_one {
-        font-family: 'One Title';
-    }
-
-    @font-face {
-        font-family: 'Nanum Square';
-        src: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2190/NanumSquareR.otf");
-    }
-    .font_nanumsquare {
-        font-family: 'Nanum Square';
-    }
-</style>
-
-    <!-- 스크롤 이벤트 -->
-    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2173/scroll_effect.css">
-    <script>
-        let scroll_effect = document.getElementsByClassName("scroll_effect");
-        for (let i=0; i < scroll_effect.length; i++) {
-            scroll_effect[i].classList.add("scroll_effect_off");
-        }
-
-        let scroll_function = (x, y, w, h) => {
-            try {
-                if (document.getElementsByClassName("scroll_effect_off")) {
-                    for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
-                        if (document.getElementsByClassName("scroll_effect_off")[i].getBoundingClientRect().top < h / 5 * 3 + y && !document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
-                            document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
-                            document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
-                        }
-                    }
-                }
-            } catch (exception) {
-                for (let i=0; i < document.getElementsByClassName("scroll_effect_off").length; i++) {
-                    if (!document.getElementsByClassName("scroll_effect_off")[i].classList.contains("scroll_effect_on")) {
-                        document.getElementsByClassName("scroll_effect_off")[i].classList.add("scroll_effect_on");
-                        document.getElementsByClassName("scroll_effect_off")[i].classList.remove("scroll_effect_off");
-                    }
-                }
-            }
-        }
-
-        window.itsdcode_onscroll = (x, y, w, h) => {
-            scroll_function(x, y, w, h);
-        }
-        window.itsdcode_onresize = (x, y, w, h) => {
-            _dcode_resize();
-            scroll_function(x, y, w, h);
-        }
-        async function itsdcode_onStart(env) {
-            const current = await itsdcode_script_handleEvent("getCurrentScroll");
-            scroll_function(current.x, current.y);
-        }
-    </script>
-
-
     <!-- 디코드 기본 고정 태그 -->
     <!-- 호환성 및 뷰포트 -->
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
@@ -174,22 +182,6 @@
 
         gtag("config", "UA-68979793-14");
     </script>
-    <!-- 디코드 스크립트 3.0 -->
-    <script src="https://dcode-prod-bucket.s3.ap-northeast-2.amazonaws.com/content/itsdcode_scripts_3.min.js"></script>
-
-
-    <!-- 디코드 유동 태그 -->
-    <!-- 기본 CSS / JS -->
-    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2278/common.css" />
-    <script>
-        window.addEventListener("resize", () => {
-          _dcode_resize();
-        })
-      </script>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
 
 
     <!-- 더 자세한 스와이퍼 -->
@@ -324,22 +316,3 @@
         swiper.removeSlide(Index); // 특정 슬라이드 제거 ( 쉼표를 통해 여러개도 제거 가능)
         */
       </script>
-
-
-<!-- 버튼식 응모하기 <페이지 랜딩 버전> -->
-<script>
-    const joinlottery = () => {
-              itsdcode_script_handleEvent("joinlottery", { eventId: 37, choiceNum: 16 })
-                  .then(({success, isLogin, message}) => {
-                    if(success) {
-                      itsdcode_script_handleEvent("alert",{message: "응모 완료하셨습니다.", title: " ", button: "지금 할인 중인 브랜드 >", showCloseButton: true}).then(res => {
-                           if(res && res.confirm) itsdcode_script_handleEvent("route", { target: "/select/detail/!$QOxIjM" });  
-                      });
-                    } else {
-                          itsdcode_script_handleEvent("alert",{message: message, title: " ", button: "지금 할인 중인 브랜드 >", showCloseButton: true}).then(res => {
-                               if(res && res.confirm) itsdcode_script_handleEvent("route", { target: "/select/detail/!$QOxIjM" });  
-                          });
-                    }
-                  })
-          }
-</script>

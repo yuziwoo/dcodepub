@@ -1,294 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title>Swiper</title>
+    <meta charset="UTF-8" />
+
+    <title>hello world</title>
 
     <!-- 호환성 및 뷰포트 -->
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, height=device-height, user-scalable=no' />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
 
-    <!-- CDN  -->
-    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2153/common.css" />
-    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2203/swiper-bundle.min.css"/> <!-- 또는 css파일 직접 불러와도됨  -->
-    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2203/swiper-bundle.min.js"></script> 
+    <!-- CSS -->    
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2298/common2.css">
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2173/scroll_effect.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://dcode-prod-bucket.s3.ap-northeast-2.amazonaws.com/content/itsdcode_scripts_3.min.js"></script>
+    <script src="https://dcode-develop-account-dev-bucket.s3.ap-northeast-2.amazonaws.com/2209/test.js"></script>
 
     <style>
-      .swiper1 {
-        width: 600px;
-        height: 300px;
+      body {
+        padding: 100px;
       }
-
-      /* 폰트 적용 */
-      @font-face {
-        font-family: 'One Title';
-        src: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2134/ONE Mobile Title OTF.otf");
+      span {
+        font-size: 16px;
       }
-      .font_one {
-        font-family: 'One Title';
-      }
-
-      @font-face {
-        font-family: 'Nanum Square';
-        src: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2190/NanumSquareR.otf");
-      }
-      .font_nanumsquare {
-        font-family: 'Nanum Square';
+      div {
+        width: 30px;
+        height: 3000px;
+        background: linear-gradient(to bottom, lightblue 0%, lightgreen 100%);
       }
     </style>
 
   </head>
   <body>
-    <!-- button <a type="/news/detail/!$AMzEjM" class="btn_link"></a> -->
-    <!-- coupon <a onclick="window.open('dcodenative://downloadCoupon?cid=4368')" id="4368" class="btn_coupon btn"></a>-->
-    <!-- 오픈 알림 <a onclick="window.open('https://itsdcode.page.link/pushpush')" type="/events/push" class="btn_event btn_alarm btn"></a>-->
-    <!-- VIDEO src="https://player.vimeo.com/video/708054792?badge=0&background=1&autoplay=1&loop=1&autopause=0&muted=1"
-               <script src="https://player.vimeo.com/api/player.js"></script> -->
-    <!-- 드로우 <a onclick="window.open(&quot;https://itsdcode.page.link/joinlottery25&quot;)" type="/events/join/lottery/25" class="btn_event btn"></a> -->
-    <main>
-      <div class="swiper swiper1">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
-          <div class="swiper-slide">Slide 4</div>
-          <div class="swiper-slide">Slide 5</div>
-          <div class="swiper-slide">Slide 6</div>
-        </div>
-
-        <div class="swiper-pagination"></div>
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
-        <div class="swiper-scrollbar"></div>
-      </div>
-    </main>
-
-    <!-- 간단한 스와이퍼
-
-    const swiper = new Swiper (".swiper", {
-        loop: true,
-        allowTouchMove: false,
-        speed: 1500,
-        slidesPerView: 1,
-        effect: 'fade',
-        autoplay: {
-          delay: 1600,
-          disableOnInteraction: true,
-        }
-      })
-
-  -->
-
-    <script>
-      const swiper = new Swiper('.swiper1', {
-        // 자주 쓰는 param
-        direction: 'horizontal', // 가로 : horizontal (기본값), 세로 : vertical
-        // loop: true, // loop 사용할꺼면 scrollbar 쓰지말자 오류남
-
-        // allowSlideNext: 'true', // false 설정 시 다음 슬라이드로 안 넘어감
-        // allowSlidePrev: 'true',
-        // allowTouchMove: 'true', // false 설정 시 좌우 스크롤링 버튼으로만 조작 가능
-        // autoHeight: 'false', // true 설정시 slider wrapper가 리스트의 height값으로 자동 변환됩니다.
-
-        // 한번에 여러개 보여지는 Swiper ( +반응형 )
-        slidesPerView: 1, // 몇개 보여줄지, auto도 가능
-        spaceBetween: 10, // 간격을 몇 px로 할지
-        /*
-
-        // 반응형 >= 320px, >= 640px
-        breakpoints: {
-          320: {
-            slidesPerView: 2,
-            spaceBetween: 20
-          },
-          640: {
-            slidesPerView: 4,
-            spaceBetween: 40
-          }
-        }
-        */
-
-        // centeredSlides: true, // (기본값 = false) 리스트를 센터에 고정하기
-        // centeredSlidesBounds: true, // (기본값 = false) centeredSlides가 true일 경우 생기는 좌우측의 여백을 제거합니다.
-
-         effect: 'cards',
-        /*
-        이펙트 기본값 = slide
-        fade = 페이드 인아웃
-        cube = 정육면체 형식의 큐브
-        coverflow = 양 옆에 슬라이드 리스트들이 기울어져 있음 centeredSlides랑 같이 사용하면 좋을듯
-        flip = 뒤집기
-        creative = 전환 효과 없음
-        cards = 카드 여러잡 겹친효과
-        */
-       
-        // followFinger: false, // true 설정 시 손가락 위치에 맞춰서 지속 이동이 아니라 이동이 끝나야 전환됨
-        // grabCursor: true, // true 설정 시 마우스 hover, click 하면 마우스 커서 바뀜
-        // initialSlide: 0, // 메인으로 나올 슬라이드의 인덱스 번호를 지정
-        // speed: 300, // ms단위
-
-
-      
-
-        // 페이징
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets', // fraction, progressbar, custom 등이 있지만 안씀
-          // bulletActiveClass: 'activeClassName', // Active 된 불렛의 클래스 이름 지정
-          clickable: true, // true 설정 시 페이저 클릭 가능
-          dynamicBullets: true, // bullet 몇개만 보이게 하기
-          dynamicMainBullets: 2, // dynamicBullets 적용 시 기본 크기로 보이는 bullet의 갯수 지정
-          // hideOnClick: true, // swiper 클릭 시 페이저가 사라졌다 나타났다 함
-        },
-
-        // 좌우 버튼
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-        // 스크롤바
-        scrollbar: {
-          el: '.swiper-scrollbar',
-          // dragClass: 'dragbarName', // 드래그바의 클래스이름 지정
-          // dragSize: 50, // number | 'auto' 드래그바의 사이즈 px
-          hide: true, // 행동이 없으면 사라짐 (최초엔 첫 행동 후 사라짐)
-        },
-
-        // 자동 재생
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false, // 이걸 false 안하면 유적 swiper 조작 후 자동재생이 멈춤
-          // pauseOnMouseEnter: true, // true 설정시 마우스가 swiper 들어간 후 자동재생이 멈춤
-          stopOnLastSlide: false, // 기본값 = false, true로 설정하면 마지막에 자동재생 멈춤
-        },
-        
-        // Grid 있는데 안쓸듯
-
-      })
-      
-      // 메소드
-      // swiper.slideNext(); // 다음 슬라이드로 넘김
-      
-      /* Navigation
-      메소드
-      swiper.navigation.destory(); // 네비게이션 제거
-      swiper.navigation.init(); // initialize 네비게이션
-      swiper.naviagtion.update(enabled); // enavled/disabled 로 업데이트
-
-      이벤트
-      navigationHide // navigation이 hide되면 이벤트 발생
-      navigationShow // navigation이 show되면 이벤트 발생
-      */
-
-      /* Pagination
-      메소드
-      swiper.pagination.bullets[0]; // 특정 스와이퍼 불렛 호출
-      swiper.pagination.destory(); // 제거
-      swiper.pagination.init(); // initialize
-      swiper.pagination.update(enabled); // enabled | disabled | active
-      */
-
-      /* Autoplay
-      swiper.autoplay.running; // 자동재생이 되고있는지 true or false 반환
-      swiper.autoplay.start();
-      swiper.autoplay.stop();
-
-      이벤트
-      autoplay // 자동재생으로 슬라이드가 바뀌면 이벤트 발생
-      autoplayPause // 마우스 엔터 등으로 자동재생이 멈추면 이벤트 발생
-      autoplayResume // 자동재생 다시 시작하면 이벤트 발생
-      autoplayStart
-      autoplayStop
-      */
-
-      /* 그외에
-      swiper.addSlide(1, '<div class="swiper-slide">slide 5</div>'); // Slide 더하기
-      swiper.appendSlide('<div class="swiper-slide">slide 5</div>'); // Slide 더하기
-      swiper.prependSlide('<div class="swiper-slide">slide 5</div>'); // Slide 더하기
-      swiper.removeAllSlides(); // 슬라이드 제거
-      swiper.removeSlide(Index); // 특정 슬라이드 제거 ( 쉼표를 통해 여러개도 제거 가능)
-      */
-    </script>
-
-    <style>
-      
-    </style>
+    <p>hello world</p>
+    <div onclick='dsl.coupon(5232)'></div>
   </body>
+  <script>
+    dsl.scroll_basic();
+    async function itsdcode_onStart(env) {
+      dsl.set_position(env);      
+    }  
 
-</html>
-
-
-
-
-
-
-
-<!-- 상품 상세페이지
-
-
-      .sec_coupon {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding-bottom: 60px;
+    let object1 = {
+      one : 1,
+      two : 2
     }
-    .sec_coupon .img {
-        width: 100%;
-        max-width: 1000px;
-        position: relative;
+
+    function test(one, two, three) {
+      object1.three = three;
     }
-    .sec_coupon .img a {
-        position: absolute;
-        display: block;
-        width: 48%;
-        height: 34%;
-        left: 26.3%;
-        top: 17.1%;
-        cursor: pointer;
-    }
-</style>
-</head>
-<body>
-  <section class="sec_coupon">
-      <div class="img">
-          <img src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2185/coupons.jpg" alt="coupon img">
-          <a onclick="window.open('dcodenative://downloadCoupon?cid=4378')" id="4378" class="btn_coupon btn"></a>
-      </div>
-  </section>
+
+    test(1,2);
+    console.log(object1)
+
+    
+  </script>
   
-
--->
-
-
-<!-- MOBILE CHECK -->
-<script>
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-  if (isMobile) {
-
-  } else {
-
-  }
-</script>
-
-
-<!-- 드롭다운 체크리스트 -->
-<div class="dropdown_check dropdown_check1">
-  <button class="check_button check_button1"><p>꼭 확인해주세요!</p></button>
-  <div class="list">
-    <p>
-      <strong>유의 사항</strong>
-      - 22.06.20 ~ 22.06.30 동안 ID 당 1회 다운로드 가능합니다.<br>
-      - 본 프로모션은 당사 사정에 의해 사전 공지 없이 중단될 수 있습니다.
-    </p>
-  </div>
-</div>
-<script>
-  document.getElementsByClassName("check_button1")[0].addEventListener("click", () => {
-    document.getElementsByClassName("dropdown_check1")[0].classList.toggle("check_on");
-    _dcode_resize();
-  })
-</script>
+</html>

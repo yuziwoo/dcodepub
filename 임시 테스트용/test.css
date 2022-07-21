@@ -1,121 +1,221 @@
-.main_visual {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700;800&display=swap');
+
+.font_franklin {
+    font-family: 'Libre Franklin', sans-serif;
 }
 
-.main_visual .bg,
-.main_visual .bg img,
-.main_visual .content img,
-.banner_wrap .banner img {
+.pre_mob,
+.pre_mobflex {
+    display: none!important;
+}
+
+@media screen and (max-width: 780px) {
+    .pre_pc {
+        display: none!important;
+    }
+    .pre_mob {
+        display: block!important;
+    }
+    .pre_mobflex {
+        display: flex!important;
+    }
+}
+
+main {
+    width: 100%;
+    overflow: hidden;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0px;
+    text-align: center;
+}
+
+.title .logo {
+    padding-bottom: 20px;
+}
+
+.title .logo img,
+.content .box .img img {
     width: 100%;
     display: block;
 }
 
-.main_visual .content {
-    width: 38.54%;
-    position: absolute;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.5s;
-}
-
-.main_visual_on .content {
-    opacity: 1;
-    transform: translateY(0px);
-}
-
-.checklist {
-    text-align: center;
-    width: 100%;
-    line-height: 2;
-    padding: 80px 0px;
-    color: #1d1d1f;
-    background-image: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2285/checklist_bg.jpg");
-    background-repeat: repeat;
-    background-position: center center;
-    letter-spacing: -0.02em;
-}
-
-.checklist h1 {
-    font-size: 42px;
-    padding-bottom: 25px;
-}
-
-.checklist p {
+.title .collection h3 {
     font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.title .about {
+    padding-top: 60px;
+    width: 100%;
+    max-width: 1360px;
+}
+
+.title .about p {
+    font-size: 20px;
+    line-height: 1.8;
+    padding-bottom: 40px;
+}
+
+.title .about p:last-child {
+    padding-bottom: 0px;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.content .box {
+    width: 100%;
+    max-width: 1360px;
+    display: flex;
+    padding-bottom: 80px;
+}
+
+.content .box .img {
+    width: 50%;
+}
+
+.content .box .text {
+    position: relative;
+    width: 50%;
+}
+
+.content .text .up {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 4%;
+}
+
+.content .text .up p {
+    font-size: 26px;
+    line-height: 1.5;
+    text-align: left;
+    letter-spacing: 0.02em;
+}
+
+.content .text .up p span {
+    margin-left: 50px;
+    text-decoration: underline;
+}
+
+.content .text .up p:last-child {
+    text-align: right;
+}
+
+.content .text .down {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 4%;
+}
+
+.content .text .down h3 {
+    font-size: 24px;
+    padding-bottom: 2%;
+    font-weight: 400;
+    text-indent: 3%;
+}
+
+.content .text .down p {
+    font-size: 22px;
+    line-height: 1.4;
 }
 
 .banner_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.banner {
     width: 100%;
+    max-width: 1360px;
+    height: 148px;
+    background-image: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2297/banner_01.jpg");
+    background-size: auto 100%;
+    background-position: left center;
+    background-repeat: repeat;
+}
+
+.banner a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0px 2%;
+    letter-spacing: 0.02em;
+}
+
+.banner a .left h3 {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 25px;
+}
+
+.banner a .left p {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.banner a .right {
+    width: 70px;
+    height: 70px;
+    padding: 15px;
+    border-radius: 50%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px 0px 60px;
-    flex-direction: column;
+    border: 1px solid black;
 }
 
-.banner_wrap .banner {
+.banner a .right img {
     width: 100%;
-    max-width: 1360px;
-    padding-bottom: 5px;
 }
 
-.category {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 60px;
+.banner a:hover .right img {
+    animation: banner 1.2s 1;
 }
 
-.category ul {
-    width: 90%;
-    max-width: 1360px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+@keyframes banner {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    80% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 
-.category ul li {
-    width: calc(20% - 4px);
-    background-image: url("https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2285/button.jpg");
-    background-position: center top;
-    background-size: cover;
-    background: rgb(40, 40, 40);
-    border: 1px solid rgb(200, 200, 200);
-    border-radius: 0px;
-    overflow: hidden;
-    color: rgb(150, 150, 150);
-    transition: all 0.5s;
-    text-align: center;
-    margin-bottom: 5px;
+@media screen and (max-width: 1100px) {
+    .banner_pc {
+        display: none!important;
+    }
 }
 
-.category ul li a {
-    padding: 20px 0px;
-    background-color: rgba(255, 255, 255, 1);
-    transition: all 0.5s;
-}
-
-.category ul li a h1 {
-    font-weight: 400;
-    font-size: 14px;
-    transition: all 0.5s;
-}
-
-.category ul li:hover,
-.category ul .active {
-    border: 1px solid rgb(40, 40, 40);
-}
-
-.category ul li:hover a,
-.category ul .active a {
-    background-color: rgba(255, 255, 255, 0);
-}
-
-.category ul li:hover a h1,
-.category ul .active a h1 {
-    font-weight: 700;
-    color: white;
-}
